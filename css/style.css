@@ -1,5 +1,5 @@
 /******************************************************************
-  Template Name: Violet 
+  Template Name: Violet
   Description: Violet ecommerce Html Template
   Author: Colorlib
   Author URI: https://colorlib.com/
@@ -30,11 +30,22 @@
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
+@font-face {
+	font-family: "horizon";
+	src: url("../fonts/horizon.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	width: 100vw;
+	overflow-x: hidden;
+}
 
 html,
 body {
 	height: 100%;
-	font-family: "Montserrat", sans-serif;
+	font-family: "horizon", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 	background: none;
@@ -78,7 +89,7 @@ h6 {
 
 p {
 	font-size: 15px;
-	color: #7b7b7b;
+	color: #000000;
 	font-weight: 400;
 	line-height: 1.6;
 	font-family: "Montserrat", sans-serif;
@@ -122,8 +133,9 @@ ol {
 
 .section-title h2 {
 	color: #1e1e1e;
-	font-size: 60px;
+	font-size: 40px;
 	font-weight: 700;
+	font-family: "horizon", sans-serif;
 }
 
 .set-bg {
@@ -132,10 +144,6 @@ ol {
 	background-position: top center;
 }
 
-.spad {
-	padding-top: 100px;
-	padding-bottom: 100px;
-}
 
 .text-white h1,
 .text-white h2,
@@ -153,14 +161,15 @@ ol {
 /* buttons */
 
 .primary-btn {
-	color: #fff;
+	color: #ffffff;
 	display: inline-block;
 	font-size: 14px;
 	font-weight: 600;
 	padding: 16px 40px;
-	border: 2px solid #fff;
+	border: 2px solid #000000;
 	border-radius: 50px;
 	text-transform: uppercase;
+	background-color: black;
 }
 
 .site-btn {
@@ -260,20 +269,36 @@ ol {
 -----------------------*/
 
 .header-section {
-	height: 104px;
-	padding-top: 38px;
-	padding-bottom: 24px;
-	padding-left: 45px;
-	padding-right: 45px;
+	position: absolute;
+	display: flex;
+	height: 60px;
+	z-index: 99;
+	width: 100%;
+	background-color: rgba(265, 265, 265, 0.3);
 }
 
-.inner-header .logo {
-	float: left;
+.header-section .container-fluid {
+	align-content: center;
 }
 
-.inner-header .header-right {
-	float: right;
-	line-height: 30px;
+.inner-header {
+	display: flex;
+    flex-direction: row;
+    box-sizing: unset;
+	width: 100%;
+	justify-content: space-between;
+}
+.inner-header .logo img {
+	height: 40px;
+}
+
+.inner-header nav ul > li div:hover {
+	cursor: pointer;
+}
+
+.inner-header nav ul > li div {
+	line-height: 42px;
+	padding: 0 20px;
 }
 
 .inner-header .header-right img {
@@ -339,7 +364,7 @@ ol {
 
 .inner-header .main-menu {
 	float: right;
-	margin-right: 150px;
+	margin-right: 50px;
 }
 
 .inner-header .main-menu ul li {
@@ -350,7 +375,7 @@ ol {
 
 .inner-header .main-menu ul li a {
 	color: #1e1e1e;
-	font-size: 16px;
+	font-size: 12px;
 	display: inline-block;
 	font-weight: 500;
 	position: relative;
@@ -504,6 +529,22 @@ ol {
   Hero Slider
 -----------------------*/
 
+.hero-slider {
+	height: 100vh;
+}
+
+.logocarousel {
+	width: 40% !important;
+	display: inline !important;
+}
+@media screen and (max-width: 768px) {
+	.logocarousel {
+		width: 70% !important;
+	}
+
+}
+
+
 .hero-items .owl-dots {
 	position: absolute;
 	left: 110px;
@@ -527,14 +568,13 @@ ol {
 	display: inline-block;
 	height: 68px;
 	width: 68px;
-	background: #B0BCC2;
 	font-size: 35px;
 	color: #fff;
 	border-radius: 50%;
 	text-align: center;
 	position: absolute;
-	left: 60px;
-	top: 345px;
+	right: 60px;
+    top: 50vh;
 }
 
 .hero-items .owl-nav button[type=button].owl-next {
@@ -561,6 +601,8 @@ ol {
 	font-size: 96px;
 	font-weight: 400;
 	margin-bottom: 28px;
+	line-height: 5rem;
+    padding: 60px 0 150px 0
 }
 
 .single-slider-item .primary-btn,
@@ -569,6 +611,10 @@ ol {
 	position: relative;
 	top: 50px;
 	opacity: 0;
+}
+
+.hero-items .owl-item{
+	height: 100vh;
 }
 
 .hero-items .owl-item.active .single-slider-item h1,
@@ -586,6 +632,7 @@ ol {
 .hero-items .owl-item.active .single-slider-item h2 {
 	-webkit-transition: all 0.5s ease 0.6s;
 	transition: all 0.5s ease 0.6s;
+	font-family: "horizon", sans-serif;
 }
 
 .hero-items .owl-item.active .single-slider-item .primary-btn {
@@ -842,7 +889,7 @@ ol {
 }
 
 .lookbok-left p {
-	color: #787878;
+	color: #440303;
 	font-size: 14px;
 	line-height: 27px;
 	font-weight: 500;
@@ -850,7 +897,7 @@ ol {
 }
 
 .lookbok-left .primary-btn.look-btn {
-	background-color: #B0BCC2;
+	background-color: #000000;
 }
 
 .lookbok-pic {
@@ -905,6 +952,7 @@ ol {
 .logo-section .owl-carousel .owl-item img {
 	display: block;
 	width: auto;
+
 }
 
 /*---------------------
@@ -932,7 +980,6 @@ ol {
 	background: transparent;
 	color: #535353;
 	font-size: 14px;
-	font-style: italic;
 	font-weight: 600;
 	padding-left: 30px;
 	position: relative;
@@ -941,8 +988,8 @@ ol {
 .newslatter-form form button {
 	width: 310px;
 	height: 53px;
-	background: #B0BCC2;
-	border: 2px solid #B0BCC2;
+	background: #2cd502;
+	border: 2px solid #2cd502;
 	color: #fff;
 	cursor: pointer;
 	text-transform: uppercase;
@@ -951,6 +998,11 @@ ol {
 	border-radius: 50px;
 	position: absolute;
 	right: 0;
+}
+
+.footer {
+	justify-content: space-around;
+
 }
 
 .footer-widget {
@@ -963,8 +1015,9 @@ ol {
 
 .footer-widget .single-footer-widget h4 {
 	color: #fff;
-	font-size: 26px;
+	font-size: 18px;
 	margin-bottom: 44px;
+	font-family: "horizon", sans-serif;
 }
 
 .footer-widget .single-footer-widget ul li {
@@ -974,16 +1027,26 @@ ol {
 	list-style: none;
 	line-height: 36px;
 	opacity: 0.5;
+	font-family: "Montserrat", sans-serif;
 }
 
 .social-links-warp {
-	background: #222121;
+	background: #2cd502;	;
 	padding: 46px 0;
+
+}
+
+.social-links {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente (si es necesario) */
+    gap: 30px;               /* Espaciado entre los enlaces */
 }
 
 .social-links a {
 	margin-right: 88px;
 	display: inline-block;
+
 }
 
 .social-links a:last-child {
@@ -992,7 +1055,7 @@ ol {
 
 .social-links a i {
 	font-size: 30px;
-	color: #d7d7d7;
+	color: #ffffff;
 	float: left;
 	margin-right: 19px;
 	overflow: hidden;
@@ -1005,7 +1068,7 @@ ol {
 	font-size: 12px;
 	font-weight: 400;
 	text-transform: uppercase;
-	color: #9f9fa0;
+	color: #ffffff;
 	padding-top: 10px;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
@@ -1066,10 +1129,11 @@ ol {
 	color: #1e1e1e;
 	font-size: 48px;
 	font-weight: 600;
+	font-family: "horizon", sans-serif;
 }
 
 .page-add .page-breadcrumb h2 span {
-	color: #B0BCC2;
+	color: #4ce600;
 }
 
 .page-add .page-breadcrumb a {
@@ -1329,6 +1393,7 @@ ol {
 	color: #1e1e1e;
 	font-weight: 700;
 	margin-bottom: 12px;
+	font-family: horizon, sans-serif;
 }
 
 .product-content .pc-meta {
@@ -1336,7 +1401,7 @@ ol {
 }
 
 .product-content .pc-meta h5 {
-	color: #1e1e1e;
+	color: #24ed00;
 	font-weight: 700;
 	margin-bottom: 18px;
 }
@@ -1743,7 +1808,7 @@ ol {
 }
 
 /*---------------------
-  Cart Total Page 
+  Cart Total Page
 -----------------------*/
 
 .cart-total-page {
@@ -1975,7 +2040,7 @@ ol {
 }
 
 /*---------------------
-  Cart Total Page 
+  Cart Total Page
 -----------------------*/
 
 .contact-section {
@@ -2031,11 +2096,14 @@ ol {
 }
 
 .contact-widget .cw-item ul li {
-	color: #838383;
+	color: #646464;
 	font-size: 14px;
 	font-weight: 500;
 	list-style: none;
 	line-height: 28px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 800;
+
 }
 
 .map {
@@ -2055,7 +2123,7 @@ ol {
 	}
 	.inner-header .main-menu {
 		float: right;
-		margin-right: 238px;
+		margin-right: 50px;
 	}
 }
 
@@ -2239,7 +2307,7 @@ ol {
 		float: none;
 	}
 	.hero-items .owl-nav button[type=button] {
-		left: 5px;
+		right: 8px;
 	}
 	.social-links {
 		text-align: center;
@@ -2332,6 +2400,7 @@ ol {
 	}
 	.section-title h2 {
 		font-size: 36px;
+		font-family: h;
 	}
 	.lookbok-pic img {
 		height: auto;

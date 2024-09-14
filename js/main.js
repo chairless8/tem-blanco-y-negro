@@ -1,5 +1,5 @@
 /*  ---------------------------------------------------
-    Template Name: Violet 
+    Template Name: Violet
     Description: Violet ecommerce Html Template
     Author: Colorlib
     Author URI: https://colorlib.com/
@@ -69,7 +69,7 @@
         dots: true,
         animateOut: 'fadeOut',
         animateIn: 'fadeIn',
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+        navText: ['<i class="fa fa-angle-right"></i>', '<i class="fa fa-angle-right"></i>'],
         smartSpeed: 1200,
         autoplayHoverPause: true,
         mouseDrag: false,
@@ -113,7 +113,7 @@
         dots: true,
         autoplay: true,
     });
-    
+
 
     /*------------------
         Magnific Popup
