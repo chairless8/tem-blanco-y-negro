@@ -1374,6 +1374,10 @@ ol {
 	min-width: 100%;
 }
 
+.aboutme-slider{
+	margin-top: 70px;
+}
+
 .product-img figure .p-status {
 	position: absolute;
 	left: 20px;
