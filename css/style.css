@@ -185,6 +185,11 @@ ol {
 	background-color: black;
 }
 
+.primary-btn:hover {
+	background-color: #323232 !important;
+	border: 2px solid black !important;
+}
+
 .site-btn {
 	color: #1e1e1e;
 	display: inline-block;
@@ -466,6 +471,9 @@ ol {
 /*---------------------
   Search Bar
 -----------------------*/
+.search-trigger {
+	cursor: pointer;
+}
 
 .search-model {
 	display: none;
@@ -686,6 +694,7 @@ ol {
 .features-ads .single-features-ads img {
    margin-top: 30px;
    margin-bottom: 10px;
+   opacity: 0.6;
 }
 
 .features-ads .single-features-ads h4 {
@@ -990,6 +999,7 @@ ol {
 
 }
 
+
 /*---------------------
   Footer
 -----------------------*/
@@ -997,6 +1007,10 @@ ol {
 .footer-section {
 	background: #262626;
 	padding-bottom: 0;
+	margin-top: 80px;
+}
+.footer-section ul li a{
+	color: #ffffff;
 }
 
 .newslatter-form {
@@ -1023,8 +1037,8 @@ ol {
 .newslatter-form form button {
 	width: 310px;
 	height: 53px;
-	background: #2cd502;
-	border: 2px solid #2cd502;
+	background: #4ce600;
+	border: 2px solid #4ce600;
 	color: #fff;
 	cursor: pointer;
 	text-transform: uppercase;
@@ -1152,7 +1166,7 @@ ol {
 -----------------------*/
 
 .page-add {
-	padding-top: 31px;
+	padding-top: 45px;
 	margin-bottom: 92px;
 }
 
@@ -1607,6 +1621,10 @@ ol {
 
 .related-product .section-title {
 	margin-bottom: 60px;
+}
+
+.btn-contact {
+	font-family: horizon, sans-serif;
 }
 
 /*---------------------
