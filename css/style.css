@@ -474,6 +474,7 @@ ol {
 .search-trigger {
 	cursor: pointer;
 }
+/*----------- Search Model----------*/
 
 .search-model {
 	display: none;
