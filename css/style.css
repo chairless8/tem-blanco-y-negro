@@ -292,7 +292,7 @@ ol {
 	height: 60px;
 	z-index: 99;
 	width: 100%;
-	background-color: rgba(265, 265, 265, 0.3);
+	background-color: rgba(265, 265, 265, 0.1);
 }
 
 .header-section .container-fluid {
@@ -695,7 +695,7 @@ ol {
 .features-ads .single-features-ads img {
    margin-top: 30px;
    margin-bottom: 10px;
-   opacity: 0.6;
+   opacity: 0.4;
 }
 
 .features-ads .single-features-ads h4 {
