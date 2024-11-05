@@ -85,7 +85,7 @@ h4 {
 	line-height: 24px !important;
 }
 .proceso_compra img {
-	width: 25%;
+	width: 20%;
 }
 
 h5 {
@@ -695,7 +695,7 @@ ol {
 .features-ads .single-features-ads img {
    margin-top: 30px;
    margin-bottom: 10px;
-   opacity: 0.4;
+   opacity: 0.1;
 }
 
 .features-ads .single-features-ads h4 {
@@ -2558,3 +2558,4 @@ ol {
 		padding: 10px 0;
 	}
 }
+
