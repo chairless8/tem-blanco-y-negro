@@ -829,17 +829,57 @@ ol {
 	font-family: horizon, sans-serif;
 }
 
+.overlay-content {
+    max-width: 80%; /* Controla el ancho máximo del contenido */
+    width: 100%;
+    padding: 20px;
+    z-index: 1;
+}
+
+/*---------------------
+  bramanmte
+-----------------------*/
+.overlay-contents-bramante {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%); /* Para centrar verticalmente */
+    text-align: right; /* Alinea todo el texto a la derecha */
+    color: white; /* Para que el texto sea visible en la imagen */
+    padding: 40px;
+    max-width: 50%; /* O ajusta al tamaño que desees */
+	font-family: ;
+}
+
+.overlay-contents-bramante h1 {
+    font-size:xx-large;
+    text-transform: uppercase;
+}
+
+
+.overlay-contents-bramante p {
+    font-size: larger; /* Tamaño del texto */
+    margin-bottom: 20px;
+}
+
+.overlay-contents-bramante .btn {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.overlay-contents-bramante .btn:hover {
+    background-color: #444;
+}
+
 /*---------------------
   Latest Product
 -----------------------*/
 
 .latest-products {
-	padding-top: 55px;
-	padding-bottom: 65px;
+	padding: 70px 0px;
 }
 
 .product-filter {
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 }
 
 .product-filter .section-title {
@@ -966,6 +1006,51 @@ ol {
 	line-height: 97px;
 }
 
+/*---------------------
+  nadvarSection
+-----------------------*/
+
+.container-fluid.categorias-navbar {
+	padding: 70px 20px;
+}
+
+.categories-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.cat-item {
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cat-item:hover {
+    transform: scale(1.05);
+}
+
+.cat-img img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    transition: box-shadow 0.3s ease;
+}
+
+.cat-item:hover .cat-img img {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.titule-categorias{
+	font-family: horizon, sans-serif;
+	padding: 10px;
+    font-size: medium;
+}
+}
+
+/*---------------------
+  nadvarSection
+-----------------------*/
 /*---------------------
   Logo Section
 -----------------------*/
@@ -1545,6 +1630,12 @@ ol {
 /*---------------------
   Related Products
 -----------------------*/
+
+/*- secion lineas *
+
+
+/*- seccion lineas End */
+
 /*---------------------
   blooggg
 -----------------------*/
