@@ -25,72 +25,101 @@
 
     <style>
         /* Estilos de la galería */
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            padding: 30px;
-        }
+      /* Estilos de la galería */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Tres columnas */
+    gap: 15px;
+    padding: 20px;
+}
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-        }
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas más pequeñas */
+    }
+}
 
-        .gallery-img {
-            width: 100%;
-            height: auto;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
 
-        .gallery-img:hover {
-            transform: scale(1.1);
-        }
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1; /* Hacer que los contenedores de las imágenes sean cuadrados */
+}
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 100px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Las imágenes se ajustarán para cubrir el área sin deformarse */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
 
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
+/* Efecto de hover */
+.gallery-img:hover {
+    transform: scale(1.1);
+}
 
-        #caption {
-            margin: 15px auto;
-            text-align: center;
-            color: #ccc;
-            font-size: 20px;
-        }
 
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+/* Modal Styles */
+   /* Modal Styles */
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
+.modal-content {
+    position: relative;
+    display: block;
+    max-width: 90%;  /* Limita el tamaño máximo a 90% del ancho de la pantalla */
+    max-height: 90%; /* Limita el tamaño máximo a 90% de la altura de la pantalla */
+}
+
+#modal-img {
+    width: auto;      /* Mantiene el tamaño original de la imagen */
+    height: auto;     /* Mantiene el tamaño original de la imagen */
+    max-width: 100%;  /* Limita el tamaño máximo al 100% del contenedor */
+    max-height: 90vh; /* Limita el tamaño máximo al 100% del contenedor */
+    display: block;
+    margin: auto;     /* Centra la imagen dentro del modal */
+}
+
+/* Caption and close button */
+#caption {
+    margin: 15px auto;
+    text-align: center;
+    color: #ccc;
+    font-size: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
     </style>
 </head>
 
@@ -159,50 +188,46 @@
     </section>
     <!-- Page Add Section End -->
 
-    <!-- Galeria seccion  -->
-    <div class="gallery-container">
-        <div class="gallery-item">
-            <img src="img/f-box-2.jpg" alt="Imagen 1" class="gallery-img" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="img/f-box-2.jpg" alt="Imagen 2" class="gallery-img" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="img/f-box-2.jpg" alt="Imagen 3" class="gallery-img" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="img/f-box-1.jpg" alt="Imagen 4" class="gallery-img" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="img/f-box-2.jpg" alt="Imagen 5" class="gallery-img" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="img/f-box-2.jpg" alt="Imagen 6" class="gallery-img" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="img/f-box-2.jpg" alt="Imagen 6" class="gallery-img" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="img/f-box-2.jpg" alt="Imagen 6" class="gallery-img" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="img/f-box-2.jpg" alt="Imagen 6" class="gallery-img" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="img/f-box-2.jpg" alt="Imagen 6" class="gallery-img" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="img/f-box-2.jpg" alt="Imagen 6" class="gallery-img" onclick="openModal(this)">
-        </div>
-
+   <!-- Galeria seccion -->
+<div class="gallery-container">
+    <div class="gallery-item">
+        <img src="img/galeria/galeria1.png" alt="Colección Tatre" class="gallery-img" onclick="openModal(this)">
     </div>
-
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modal-img">
-        <div id="caption"></div>
+    <div class="gallery-item">
+        <img src="img/galeria/galeria2.png" alt="Colección Tatre" class="gallery-img" onclick="openModal(this)">
     </div>
+    <div class="gallery-item">
+        <img src="img/galeria/galeria3.png" alt= "Colección Tatre" class="gallery-img" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="img/galeria/galeria1.png" alt="Colección Tatre" class="gallery-img" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="img/galeria/galeria2.png" alt="Imagen 2" class="gallery-img" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="img/galeria/galeria3.png" alt="Imagen 3" class="gallery-img" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="img/galeria/galeria1.png" alt="Imagen 1" class="gallery-img" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="img/galeria/galeria2.png" alt="Imagen 2" class="gallery-img" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="img/galeria/galeria3.png" alt="Imagen 3" class="gallery-img" onclick="openModal(this)">
+    </div>
+    <!-- Más imágenes -->
+</div>
+
+  <!-- Modal (ventana emergente) -->
+<div id="modal" class="modal" style="display: none;">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modal-img" class="modal-content" src="">
+    <div id="caption"></div>
+</div>
+
+
     <!-- Galeria seccion End -->
 
     <!-- Related Product Section Begin -->
@@ -292,28 +317,30 @@
     <script src="js/main.js"></script>
 
     <script>
-        // Funciones para el modal
-        function openModal(element) {
-            var modal = document.getElementById("modal");
-            var modalImg = document.getElementById("modal-img");
-            var captionText = document.getElementById("caption");
-            modal.style.display = "block";
-            modalImg.src = element.src;
-            captionText.innerHTML = element.alt;
-        }
+        
+   // Funciones para el modal
+function openModal(element) {
+    var modal = document.getElementById("modal");
+    var modalImg = document.getElementById("modal-img");
+    var captionText = document.getElementById("caption");
+    modal.style.display = "block";  // Mostrar el modal cuando se hace clic en la imagen
+    modalImg.src = element.src;    // Asignar la imagen al modal
+    captionText.innerHTML = element.alt;  // Asignar la descripción de la imagen
+}
 
-        function closeModal() {
-            var modal = document.getElementById("modal");
-            modal.style.display = "none";
-        }
+function closeModal() {
+    var modal = document.getElementById("modal");
+    modal.style.display = "none";  // Cerrar el modal cuando se hace clic en el botón de cierre
+}
 
-        // Cerrar el modal si se hace clic fuera de la imagen
-        window.onclick = function(event) {
-            var modal = document.getElementById("modal");
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+// Cerrar el modal si se hace clic fuera de la imagen
+window.onclick = function(event) {
+    var modal = document.getElementById("modal");
+    if (event.target == modal) {
+        modal.style.display = "none";  // Cerrar el modal si se hace clic fuera de la imagen
+    }
+}
+
     </script>
 </body>
 
