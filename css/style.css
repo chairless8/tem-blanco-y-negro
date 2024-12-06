@@ -473,6 +473,7 @@ ol {
 -----------------------*/
 .search-trigger {
 	cursor: pointer;
+	width: 60px;
 }
 /*----------- Search Model----------*/
 
@@ -550,117 +551,86 @@ ol {
 /*---------------------
   Hero Slider
 -----------------------*/
-
 .hero-slider {
-	height: 100vh;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
 }
 
-.logocarousel {
-	width: 40% !important;
-	display: inline !important;
-}
-@media screen and (max-width: 768px) {
-	.logocarousel {
-		width: 70% !important;
-	}
-
-}
-
-
-.hero-items .owl-dots {
-	position: absolute;
-	left: 110px;
-	bottom: 62px;
+/* Estilo para la imagen de portada */
+.portada-imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
-.hero-items .owl-dots button {
-	display: inline-block;
-	height: 11px;
-	width: 11px;
-	background: #969D9E;
-	border-radius: 50%;
-	margin-right: 9px;
+/* Estilo para la imagen de portada en pantallas pequeñas */
+@media (max-width: 768px) {
+    .portada-imagen {
+        border: 2px solid red; /* Agregar un borde para verificar */
+    }
 }
 
-.hero-items .owl-dots button.active {
-	background: #1e1e1e;
+/* Estilo para el logo */
+.logoimagen {
+    width: 40%;
+    margin-bottom: 20px;
+    z-index: 1;
 }
 
-.hero-items .owl-nav button[type=button] {
-	display: inline-block;
-	height: 68px;
-	width: 68px;
-	font-size: 35px;
-	color: #fff;
-	border-radius: 50%;
-	text-align: center;
-	position: absolute;
-	right: 60px;
-    top: 50vh;
+/* Estilo para el texto */
+h2 {
+    color: #fff;
+    font-size: 90px;
+    font-weight: 400;
+    line-height: 5rem;
+    font-family: "horizon", sans-serif;
+    padding: 10px;
 }
 
-.hero-items .owl-nav button[type=button].owl-next {
-	left: auto;
-	right: 60px;
-	display: none;
+/* Estilo para el botón */
+.primary-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 50px;
+    margin-top: 50px;
 }
 
-.single-slider-item {
-	padding: 10%;
-	text-align: center;
-	height: 100%;
+.primary-btn:hover {
+    background-color: #444;
 }
 
-.single-slider-item h1 {
-	color: #fff;
-	font-size: 110px;
-	font-weight: 700;
-	line-height: 85px;
+/* Ajustes de responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 36px; /* Reduce el tamaño de la fuente para pantallas pequeñas */
+        line-height: 3rem; /* Ajusta el espacio entre líneas */
+    }
+
+    .logoimagen {
+        width: 60%; /* Ajusta el tamaño del logo en pantallas pequeñas */
+    }
+
+    .primary-btn {
+        padding: 8px 16px; /* Ajusta el tamaño del botón */
+        font-size: 14px;
+    }
 }
 
-.single-slider-item h2 {
-	color: #fff;
-	font-size: 96px;
-	font-weight: 400;
-	margin-bottom: 28px;
-	line-height: 5rem;
-    padding: 30px 0 80px 0
-}
-
-.single-slider-item .primary-btn,
-.single-slider-item h1,
-.single-slider-item h2 {
-	position: relative;
-	top: 50px;
-	opacity: 0;
-}
-
-.hero-items .owl-item{
-	height: 100vh;
-}
-
-.hero-items .owl-item.active .single-slider-item h1,
-.hero-items .owl-item.active .single-slider-item h2,
-.hero-items .owl-item.active .single-slider-item .primary-btn {
-	top: 0;
-	opacity: 1;
-}
-
-.hero-items .owl-item.active .single-slider-item h1 {
-	-webkit-transition: all 0.5s ease 0.4s;
-	transition: all 0.5s ease 0.4s;
-}
-
-.hero-items .owl-item.active .single-slider-item h2 {
-	-webkit-transition: all 0.5s ease 0.6s;
-	transition: all 0.5s ease 0.6s;
-	font-family: "horizon", sans-serif;
-}
-
-.hero-items .owl-item.active .single-slider-item .primary-btn {
-	-webkit-transition: all 0.5s ease 0.8s;
-	transition: all 0.5s ease 0.8s;
-}
+	
 
 /*---------------------
   Features Section
@@ -957,6 +927,8 @@ ol {
 	margin-bottom: 0;
 }
 
+
+
 /*---------------------
   Lookbok Section
 -----------------------*/
@@ -1031,8 +1003,8 @@ ol {
 }
 
 .cat-img img {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     object-fit: cover;
     transition: box-shadow 0.3s ease;
 }
@@ -1046,45 +1018,26 @@ ol {
 	padding: 10px;
     font-size: medium;
 }
+
+	/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .categories-grid {
+        gap: 15px; /* Reducir el espacio entre categorías */
+    }
+
+    .cat-img img {
+        width: 200px; /* Reducir el tamaño de las imágenes */
+        height: 200px;
+    }
+
+    .titule-categorias {
+        font-size: small; /* Reducir el tamaño de la fuente */
+    }
 }
 
 /*---------------------
   nadvarSection
 -----------------------*/
-/*---------------------
-  Logo Section
------------------------*/
-
-.logo-section {
-	padding: 70px 120px;
-}
-
-.logo-section .logo-item {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	height: 120px;
-	opacity: 0.1;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
-}
-
-.logo-section .logo-item:hover {
-	opacity: 1;
-}
-
-.logo-section .owl-carousel .owl-item img {
-	display: block;
-	width: auto;
-
-}
-
 
 /*---------------------
   Footer
