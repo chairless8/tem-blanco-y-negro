@@ -2449,7 +2449,7 @@ h2 {
 	}
 	.slicknav_menu {
 		display: block;
-		margin-top: 10px;
+		background-color: #00000000;
 	}
 	.inner-header .header-right {
 		margin-right: 20px;
@@ -2585,7 +2585,7 @@ h2 {
 	}
 	.section-title h2 {
 		font-size: 36px;
-		font-family: h;
+		font-family:'horizon';
 	}
 	.lookbok-pic img {
 		height: auto;
