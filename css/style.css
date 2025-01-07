@@ -382,7 +382,6 @@ ol {
 
 .inner-header .main-menu {
 	float: right;
-	margin-right: 50px;
 }
 
 .inner-header .main-menu ul li {
@@ -573,11 +572,17 @@ ol {
     z-index: -1;
 }
 
+/* Mostrar unicamente en pantallas grandes */
+@media (min-width: 769px) {
+    .display-sm-only {
+        display: none;
+    }
+}
 /* Estilo para la imagen de portada en pantallas pequeñas */
 @media (max-width: 768px) {
-    .portada-imagen {
-        border: 2px solid red; /* Agregar un borde para verificar */
-    }
+	.display-md{
+		display: none;
+	}
 }
 
 /* Estilo para el logo */
@@ -2256,9 +2261,6 @@ h2 {
 		padding-left: 0;
 		padding-right: 0;
 	}
-	.inner-header .main-menu {
-		margin-right: 50px;
-	}
 	.inner-header .main-menu ul li {
 		margin-left: 30px;
 	}
@@ -2496,3 +2498,12 @@ h2 {
 		padding: 10px 0;
 	}
 }
+
+.header-section {
+	background-color: transparent; /* Color inicial */
+	transition: background-color 0.5s ease; /* Duración y tipo de transición */
+}
+
+.header-section.open {
+	background-color: #696969f2; /* Color de fondo al abrir */
+}  

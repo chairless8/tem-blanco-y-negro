@@ -1,8 +1,9 @@
 ;(function ($, document, window) {
     var
     // default settings object.
+        menuContainer = document.querySelector('.header-section');
         defaults = {
-            label: 'MENU',
+            label: '',
             duplicate: true,
             duration: 200,
             easingOpen: 'swing',
@@ -22,8 +23,8 @@
 			brand: '',
             animations: 'jquery',
             init: function () {},
-            beforeOpen: function () {},
-            beforeClose: function () {},
+            beforeOpen: function () { menuContainer.classList.add('open'); },
+            beforeClose: function () { menuContainer.classList.remove('open'); },
             afterOpen: function () {},
             afterClose: function () {}
         },
