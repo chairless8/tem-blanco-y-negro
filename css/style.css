@@ -1462,7 +1462,7 @@ h2 {
 
 .product-content .pc-btn {
 	border-color: #D0D7DB;
-	color: #4a4a4a;
+	color: #ffffff;
 }
 
 .product-content .p-info {
@@ -2146,7 +2146,7 @@ h2 {
 	color: #1e1e1e;
 	background: transparent;
 	border: none;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: 600;
 	padding: 16px 50px;
 	border: 2px solid #1e1e1e;
@@ -2505,5 +2505,5 @@ h2 {
 }
 
 .header-section.open {
-	background-color: #696969f2; /* Color de fondo al abrir */
+	background-color: #ff0000; /* Color de fondo al abrir */
 }  
