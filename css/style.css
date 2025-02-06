@@ -1105,7 +1105,6 @@ h2 {
 
 .page-add {
 	padding-top: 45px;
-	margin-bottom: 92px;
 }
 
 .page-add .page-breadcrumb {
@@ -1117,6 +1116,12 @@ h2 {
 	font-size: 48px;
 	font-weight: 600;
 	font-family: "horizon", sans-serif;
+}
+/* Ajustar tamaño del título en pantallas menores a 480px */
+@media screen and (max-width: 480px) {
+    .page-add .page-breadcrumb h2 {
+        font-size: 28px; /* Aún más pequeño para móviles */
+    }
 }
 
 .page-add .page-breadcrumb h2 span {
@@ -2114,7 +2119,7 @@ h2 {
 -----------------------*/
 
 .contact-section {
-	padding-bottom: 94px;
+	padding: 60px 0;
 }
 
 .contact-form input {
