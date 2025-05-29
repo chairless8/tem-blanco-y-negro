@@ -731,7 +731,7 @@ h2 {
 	.features-ads {
 		padding: 30px 30px;
 	}
-	
+
 }
 
 /*---------------------
@@ -839,7 +839,7 @@ h2 {
     .primary-btn {
         font-size: 0.9rem; /* Reducir el tamaño del botón */
     }
-	
+
 }
 
 /* Media Query para pantallas pequeñas (menos de 576px) */
@@ -2509,6 +2509,34 @@ h2 {
 	transition: background-color 0.5s ease; /* Duración y tipo de transición */
 }
 
-.header-section.open {
-	background-color: #ff0000; /* Color de fondo al abrir */
-}  
+@media only screen and (max-width: 767px) {
+	.header-section.open {
+		background-color: #ff0000; /* Color de fondo al abrir */
+	}
+
+	.open .logo{
+		display: none;
+	}
+}
+
+/* Mostrar solo la lupita normal en pantallas grandes */
+.lupita-normal {
+  display: inline;
+}
+.lupita-blanca {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .lupita-normal {
+    display: none;
+  }
+  .lupita-blanca {
+    display: inline;
+  }
+
+  .search-trigger {
+	width: 40px;
+	margin: 7px 15px;
+}
+}
