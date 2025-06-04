@@ -804,7 +804,6 @@ h2 {
     color: white; /* Para que el texto sea visible en la imagen */
     padding: 40px;
     max-width: 50%; /* O ajusta al tamaño que desees */
-	font-family: ;
 }
 
 .overlay-contents-bramante h1 {
@@ -2538,4 +2537,99 @@ h2 {
   .search-trigger {
 	width: 40px;
 }
+}
+
+/* === Grid general de productos alternando izquierda/derecha === */
+.productos-grid-general {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 24px;
+  margin-bottom: 32px;
+}
+.producto-grande {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.producto-izq {
+  grid-column: 1 / 2;
+}
+.producto-der {
+  grid-column: 2 / 3;
+}
+@media (max-width: 991px) {
+  .productos-grid-general {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .producto-izq, .producto-der {
+    grid-column: 1 / 2;
+  }
+}
+
+img.img-grande {
+	padding: 0 30px;
+}
+
+#detalle-producto {
+	min-height: 50vh;
+}
+
+@media (max-width: 767px) {
+	#detalle-producto {
+		min-height: 100vh;
+	}
+  #detalle-producto .col-md-2.d-flex {
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-top: 12px;
+    width: 100%;
+    gap: 10px;
+  }
+  #detalle-producto .miniatura-img {
+    margin-bottom: 0 !important;
+    margin-right: 8px;
+  }
+  #detalle-producto .col-md-5.d-flex.flex-column {
+    align-items: center;
+    padding: 0 8px;
+  }
+  #detalle-producto h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  #detalle-producto h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  #detalle-producto p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  #detalle-producto .mt-4 {
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #detalle-producto .primary-btn,
+  #detalle-producto .site-btn {
+    width: 100%;
+    padding: 10px 0 !important;
+    font-size: 1rem;
+    margin: 0 !important;
+    border-radius: 30px;
+  }
 }

@@ -1,0 +1,82 @@
+[
+  {
+    "nombre": "Falda Estrellas",
+    "imagen": "img/productos/falda1.png",
+    "detalles": ["img/productos/falda1.2.png"],
+    "categoria": "faldas",
+    "precio": "$450mxn",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Falda Azul",
+    "imagen": "img/productos/falda2.png",
+    "detalles": ["img/productos/falda2.1.png"],
+    "categoria": "faldas",
+    "precio": "$450mxn",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Falda Azul 3",
+    "imagen": "img/productos/falda3.png",
+    "detalles": ["img/productos/falda3.1.png", "img/productos/falda3.3.jpg"],
+    "categoria": "faldas",
+    "precio": "$450mxn",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Pantalón 1",
+    "imagen": "img/productos/pantalon1.png",
+    "detalles": ["img/productos/pantalon1.2.png"],
+    "categoria": "pantalones",
+    "precio": "$500mxn",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Pantalón 2",
+    "imagen": "img/productos/pantalon2.png",
+    "detalles": ["img/productos/pantalon2.1.png", "img/productos/pantalon2.2.png"],
+    "categoria": "pantalones",
+    "precio": "$500mxn",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Chamarra 1",
+    "imagen": "img/productos/chamarra1.png",
+    "detalles": [],
+    "categoria": "chamarras",
+    "precio": "$600mxn",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Corbata 1",
+    "imagen": "img/productos/corbata1.png",
+    "detalles": ["img/productos/corbata1.2.png"],
+    "categoria": "corbatas",
+    "precio": "$200mxn",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Corbata 2",
+    "imagen": "img/productos/corbata2.png",
+    "detalles": ["img/productos/corbata2.1.png"],
+    "categoria": "corbatas",
+    "precio": "$200mxn",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Bolsa 1",
+    "imagen": "img/productos/bolsa1.png",
+    "detalles": ["img/productos/bolsa1.2.png"],
+    "categoria": "bolsas",
+    "precio": "$350mxn",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Short Tiras",
+    "imagen": "img/productos/Short.tiras.png",
+    "detalles": [],
+    "categoria": "shorts",
+    "precio": "$300mxn",
+    "descripcion": ""
+  }
+]
