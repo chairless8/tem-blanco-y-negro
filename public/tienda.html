@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoga Studio Template">
+    <meta name="keywords" content="Yoga, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IceGreen | Tienda</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/cart.css" type="text/css">
+    <link rel="icon" type="image/png" href="img/hielo1.png">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+   <!-- Search model -->
+   <div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">+</div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Buscar.....">
+        </form>
+    </div>
+</div>
+	<!-- Search model end -->
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Carrito de Compras</h3>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <!-- Cart total and confirm button will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Header Section Begin (tienda)-->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="inner-header">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="img/hielo.png" alt="Logo IceGreen">
+                    </a>
+                </div>
+                <!--div class="user-access">
+                    <a href="#">Register</a>
+                    <a href="#" class="in">Sign in</a>
+                </div-->
+                <nav class="main-menu mobile-menu">
+                    <ul>
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a class="active" href="./tienda.html">Tienda</a>
+                        </li>
+                        <li><a href="./aboutme.html">Sobre mi</a></li>
+                        <li><a href="./contact.html">Contacto</a></li>
+                        <li>
+                            <div class="search-trigger">
+                                <img src="img/icons/lupita.png" alt="Buscar" class="lupita-normal">
+                                <!-- Lupita blanca para pantallas pequeñas -->
+                                <img src="img/icons/lupitablanca.png" alt="Buscar" class="lupita-blanca">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="header-right">
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Cart Icon -->
+    <div class="cart-icon" id="cartIcon">
+        <i class="fa fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <!-- Header Info End -->
+    <!-- Header End -->
+
+    <!-- Page Add Section Begin -->
+    <section class="page-add">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="page-breadcrumb">
+                        <h2>TIENDA<span>.</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page Add Section End -->
+
+    <!-- Categories Page Section Begin -->
+    <section class="categories-page spad">
+        <div class="container">
+            <div class="categories-controls">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="categories-filter">
+                            <div class="cf-left">
+                                <form action="#">
+                                    <select class="sort">
+                                        <option value="">Todos</option>
+                                        <option value="faldas">Faldas</option>
+                                        <option value="pantalones">Pantalones</option>
+                                        <option value="gorros">Gorros</option>
+                                        <option value="bolsas">Bolsas</option>
+                                        <option value="chamarras">Chamarras</option>
+                                        <option value="corbatas">Corbatas</option>
+                                        <option value="shorts">Shorts</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <!--div class="cf-right">
+                                <span>20 Productos</span>
+                                <a href="#">2</a>
+                                <a href="#" class="active">3</a>
+                                <a href="#">4</a>
+                            </div-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="productos-lista" class="w-100"></div>
+            </div>
+            <div class="more-product">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <a href="#" class="primary-btn">Load More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Page Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section spad">
+        <div class="container">
+            <div class="newslatter-form">
+                <div class="row" >
+                    <!--  <div class="col-lg-12">
+                        <form action="#">
+                            <input type="text" placeholder="Your email address">
+                            <button type="submit">Subscribe to our newsletter</button>
+                        </form>
+                    </div>-->
+                </div>
+            </div>
+            <div class="footer-widget">
+                <div class="row footer">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h4>Atención al Cliente</h4>
+                            <ul>
+                                <li><a href="./contact.html">Contacto</a></li>
+                                <li><a href="./shipments.html">Envios y Entregas</a></li>
+                                <li><a href="./privacy.html">Políticas de Privacidad</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h4>Otros</h4>
+                            <ul>
+                                <li class="search-trigger">Buscar</li>
+                                <li><a href="./gallery.html">Galería</a></li>
+                                <li><a href="./tienda.html">Tienda</a></li>
+                                <li><a href="./sizes.html">Tallas y Guias de medidas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="social-links-warp">
+			<div class="container">
+				<div class="social-links">
+					<a href="https://www.instagram.com/icegreen.mx/" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
+					<a href="https://www.facebook.com/profile.php?id=61566011805176" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
+					<a href="https://es.pinterest.com/icegreenmx/" class="pinterest"><i class="fa fa-pinterest"></i><span>pinterest</span></a>
+				</div>
+			</div>
+
+<div class="container text-center pt-5">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> IceGreen</p>
+            </div>
+
+
+		</div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/productos.js"></script>
+</body>
+
+</html>
