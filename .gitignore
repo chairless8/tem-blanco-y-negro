@@ -1,0 +1,40 @@
+# Archivos de backup
+*.bundle
+backup.*
+
+# Archivos temporales
+temp_*
+*.tmp
+*.temp
+
+# Firebase
+.firebase/
+.firebaserc
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node modules (si usas)
+node_modules/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build/dist
+build/
+dist/
+
+# Otros archivos que no deben subirse
+*.zip
+*.rar
