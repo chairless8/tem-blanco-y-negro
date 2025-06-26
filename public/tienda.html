@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/cart.css" type="text/css">
     <link rel="icon" type="image/png" href="img/hielo1.png">
 </head>
 
@@ -41,6 +42,20 @@
     </div>
 </div>
 	<!-- Search model end -->
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Carrito de Compras</h3>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <!-- Cart total and confirm button will be loaded here -->
+        </div>
+    </div>
 
     <!-- Header Section Begin (tienda)-->
     <header class="header-section">
@@ -64,7 +79,9 @@
                         <li><a href="./contact.html">Contacto</a></li>
                         <li>
                             <div class="search-trigger">
-                                <img src="img/icons/lupita.png" alt="" >
+                                <img src="img/icons/lupita.png" alt="Buscar" class="lupita-normal">
+                                <!-- Lupita blanca para pantallas pequeñas -->
+                                <img src="img/icons/lupitablanca.png" alt="Buscar" class="lupita-blanca">
                             </div>
                         </li>
                     </ul>
@@ -74,6 +91,12 @@
             </div>
         </div>
     </header>
+
+    <!-- Floating Cart Icon -->
+    <div class="cart-icon" id="cartIcon">
+        <i class="fa fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
 
     <!-- Header Info End -->
     <!-- Header End -->
@@ -204,6 +227,7 @@
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/mixitup.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/productos.js"></script>
 </body>
 

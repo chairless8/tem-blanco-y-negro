@@ -33,20 +33,49 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         let html = '<div class="productos-grid-general">';
         filtrados.forEach((producto, i) => {
-            const lado = i % 2 === 0 ? 'izq' : 'der';
             const index = productos.indexOf(producto);
-            html += `<a href="detalle.html?id=${index}" class="producto-grande producto-${lado}">
-                <figure>
-                    <img src="${producto.imagen}" alt="${producto.nombre}" class="img-grande">
-                </figure>
-                <div class="product-text">
-                    <h6>${producto.nombre}</h6>
-                    <p>${producto.precio}</p>
+            // Add id to producto for cart functionality
+            producto.id = index;
+            html += `
+                <div class="producto-grande">
+                    <a href="detalle.html?id=${index}">
+                        <figure>
+                            <img src="${producto.imagen}" alt="${producto.nombre}" class="img-grande">
+                        </figure>
+                        <div class="product-text">
+                            <h6>${producto.nombre}</h6>
+                            <p>${producto.precio}</p>
+                        </div>
+                    </a>
+                    <button class="add-to-cart-btn" onclick="addToCartFromRender(${index})">
+                        Agregar al Carrito
+                    </button>
                 </div>
-            </a>`;
+            `;
         });
         html += '</div>';
         contenedor.innerHTML = html;
+    }
+
+    // Global function for add to cart button
+    window.addToCartFromRender = function(index) {
+        const producto = productos[index];
+        if (producto && cart) {
+            cart.addToCart(producto);
+            showAddToCartFeedback();
+        }
+    };
+
+    function showAddToCartFeedback() {
+        const btn = event.target;
+        const originalText = btn.textContent;
+        btn.textContent = '¡Agregado!';
+        btn.style.background = '#28a745';
+
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '#333';
+        }, 1000);
     }
 
     function renderProductoLigero(producto, index) {
