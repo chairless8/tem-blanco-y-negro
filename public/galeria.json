@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria1.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria1.webp",
+    "alt": "Imagen 1"
+  },
+  {
+    "id": 2,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria2.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria2.webp",
+    "alt": "Imagen 2"
+  },
+  {
+    "id": 3,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria3.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria3.webp",
+    "alt": "Imagen 3"
+  },
+  {
+    "id": 4,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria4.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria4.webp",
+    "alt": "Imagen 4"
+  },
+  {
+    "id": 5,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria5.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria5.webp",
+    "alt": "Imagen 5"
+  },
+  {
+    "id": 6,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria6.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria6.webp",
+    "alt": "Imagen 6"
+  },
+  {
+    "id": 7,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria7.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria7.webp",
+    "alt": "Imagen 7"
+  },
+  {
+    "id": 8,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria8.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria8.webp",
+    "alt": "Imagen 8"
+  },
+  {
+    "id": 9,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria9.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria9.webp",
+    "alt": "Imagen 9"
+  },
+  {
+    "id": 10,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria10.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria10.webp",
+    "alt": "Imagen 10"
+  },
+  {
+    "id": 11,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria11.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria11.webp",
+    "alt": "Imagen 11"
+  },
+  {
+    "id": 12,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria12.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria12.webp",
+    "alt": "Imagen 12"
+  },
+  {
+    "id": 13,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria13.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria13.webp",
+    "alt": "Imagen 13"
+  },
+  {
+    "id": 14,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria14.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria14.webp",
+    "alt": "Imagen 14"
+  },
+  {
+    "id": 15,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria15.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria15.webp",
+    "alt": "Imagen 15"
+  },
+  {
+    "id": 17,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria17.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria17.webp",
+    "alt": "Imagen 17"
+  },
+  {
+    "id": 18,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria18.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria18.webp",
+    "alt": "Imagen 18"
+  },
+  {
+    "id": 19,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria19.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria19.webp",
+    "alt": "Imagen 19"
+  },
+  {
+    "id": 20,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria20.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria20.webp",
+    "alt": "Imagen 20"
+  },
+  {
+    "id": 21,
+    "thumbnail": "img/imgWebp/galeriawebp/galeria chiquitas/galeria21.webp",
+    "large": "img/imgWebp/galeriawebp/galeria grandes/galeria21.webp",
+    "alt": "Imagen 21"
+  }
+]

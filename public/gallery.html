@@ -32,6 +32,8 @@
     grid-template-columns: repeat(4, 1fr); /* Tres columnas */
     gap: 15px;
     padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 /* Media Query para pantallas pequeñas */
@@ -186,50 +188,8 @@
     <!-- Page Add Section End -->
 
    <!-- Galeria seccion -->
-<div class="gallery-container">
-    <div class="gallery-item">
-        <img src="img/galeria/galeria7.jpg" alt="Colección Tatre" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <div class="gallery-item">
-        <img src="img/galeria/galeria8.jpg" alt="Imagen 2" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <div class="gallery-item">
-        <img src="img/galeria/galeria9.jpg" alt="Imagen 3" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <div class="gallery-item">
-        <img src="img/galeria/galeria12.jpg" alt="Imagen 3" class="gallery-img" onclick="openModal(this)">
-    </div>
-     <div class="gallery-item">
-        <img src="img/galeria/galeria1.png" alt="Colección Tatre" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <div class="gallery-item">
-        <img src="img/galeria/galeria2.png" alt="Colección Tatre" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <div class="gallery-item">
-        <img src="img/galeria/galeria3.png" alt= "Colección Tatre" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <div class="gallery-item">
-        <img src="img/galeria/galeria4.jpg" alt="Imagen 2" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <div class="gallery-item">
-        <img src="img/galeria/galeria6.jpg" alt="Imagen 3" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <div class="gallery-item">
-        <img src="img/galeria/galeria11.jpg" alt="Imagen 3" class="gallery-img" onclick="openModal(this)">
-    </div>
-     <div class="gallery-item">
-        <img src="img/galeria/galeria10.jpg" alt="Imagen 1" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <div class="gallery-item">
-        <img src="img/galeria/galeria16.jpg" alt="Imagen 3" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <div class="gallery-item">
-        <img src="img/galeria/galeria5.jpg" alt="Imagen 3" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <div class="gallery-item">
-        <img src="img/galeria/galeria15.jpg" alt="Imagen 3" class="gallery-img" onclick="openModal(this)">
-    </div>
-    <!-- Más imágenes -->
+<div class="gallery-container" id="gallery-container">
+    <!-- Las imágenes se insertarán dinámicamente desde galeria.json -->
 </div>
 
   <!-- Modal (ventana emergente) -->
@@ -320,31 +280,34 @@
     <script src="js/main.js"></script>
 
     <script>
-        
-   // Funciones para el modal
+// Funciones para el modal (actualizadas para usar imagen grande si existe)
 function openModal(element) {
-    var modal = document.getElementById("modal");
-    var modalImg = document.getElementById("modal-img");
-    var captionText = document.getElementById("caption");
-    modal.style.display = "block";  // Mostrar el modal cuando se hace clic en la imagen
-    modalImg.src = element.src;    // Asignar la imagen al modal
-    captionText.innerHTML = element.alt;  // Asignar la descripción de la imagen
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const captionText = document.getElementById("caption");
+
+    modal.style.display = "block";
+    // Si el elemento tiene data-large usa ese src, de lo contrario usa el src del thumbnail
+    modalImg.src = element.dataset.large || element.src;
+    captionText.innerHTML = element.alt;
 }
 
 function closeModal() {
-    var modal = document.getElementById("modal");
-    modal.style.display = "none";  // Cerrar el modal cuando se hace clic en el botón de cierre
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
 }
 
 // Cerrar el modal si se hace clic fuera de la imagen
 window.onclick = function(event) {
-    var modal = document.getElementById("modal");
-    if (event.target == modal) {
-        modal.style.display = "none";  // Cerrar el modal si se hace clic fuera de la imagen
+    const modal = document.getElementById("modal");
+    if (event.target === modal) {
+        modal.style.display = "none";
     }
 }
-
     </script>
+
+    <!-- Script para generar dinámicamente la galería -->
+    <script src="js/gallery.js"></script>
 </body>
 
 </html>
