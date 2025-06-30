@@ -1,82 +1,152 @@
 [
   {
     "nombre": "Falda Estrellas",
-    "imagen": "img/productos/falda1.png",
-    "detalles": ["img/productos/falda1.2.png"],
+    "imagen": "img/imgWebp/productos.webp/falda1.webp",
+    "detalles": [
+      {"src": "img/imgWebp/productos.webp/falda1.1.webp", "padding": "left"}
+    ],
     "categoria": "faldas",
     "precio": "$450mxn",
-    "descripcion": ""
+    "descripcion": "",
+    "padding": "center"
   },
   {
     "nombre": "Falda Azul",
-    "imagen": "img/productos/falda2.png",
-    "detalles": ["img/productos/falda2.1.png"],
+    "imagen": "img/imgWebp/productos.webp/falda2.webp",
+    "detalles": [
+      {"src": "img/imgWebp/productos.webp/falda2.1.webp", "padding": "center"}
+    ],
     "categoria": "faldas",
     "precio": "$450mxn",
-    "descripcion": ""
+    "descripcion": "",
+    "padding": "center"
   },
   {
-    "nombre": "Falda Azul 3",
-    "imagen": "img/productos/falda3.png",
-    "detalles": ["img/productos/falda3.1.png", "img/productos/falda3.3.jpg"],
+    "nombre": "Falda 3",
+    "imagen": "img/imgWebp/productos.webp/falda3.webp",
+    "detalles": [
+      {"src": "img/imgWebp/productos.webp/falda3.1.webp", "padding": "right"},
+      {"src": "img/imgWebp/productos.webp/falda3.2.webp", "padding": "left"}
+    ],
     "categoria": "faldas",
     "precio": "$450mxn",
-    "descripcion": ""
+    "descripcion": "",
+    "padding": "center"
   },
   {
-    "nombre": "Pantalón 1",
-    "imagen": "img/productos/pantalon1.png",
-    "detalles": ["img/productos/pantalon1.2.png"],
-    "categoria": "pantalones",
-    "precio": "$500mxn",
-    "descripcion": ""
-  },
-  {
-    "nombre": "Pantalón 2",
-    "imagen": "img/productos/pantalon2.png",
-    "detalles": ["img/productos/pantalon2.1.png", "img/productos/pantalon2.2.png"],
-    "categoria": "pantalones",
-    "precio": "$500mxn",
-    "descripcion": ""
-  },
-  {
-    "nombre": "Chamarra 1",
-    "imagen": "img/productos/chamarra1.png",
+    "nombre": "Bermuda 1",
+    "imagen": "img/imgWebp/productos.webp/bermuda1.webp",
     "detalles": [],
-    "categoria": "chamarras",
-    "precio": "$600mxn",
-    "descripcion": ""
+    "categoria": "shorts",
+    "precio": "$350mxn",
+    "descripcion": "",
+    "padding": "center"
   },
   {
-    "nombre": "Corbata 1",
-    "imagen": "img/productos/corbata1.png",
-    "detalles": ["img/productos/corbata1.2.png"],
-    "categoria": "corbatas",
-    "precio": "$200mxn",
-    "descripcion": ""
-  },
-  {
-    "nombre": "Corbata 2",
-    "imagen": "img/productos/corbata2.png",
-    "detalles": ["img/productos/corbata2.1.png"],
-    "categoria": "corbatas",
-    "precio": "$200mxn",
-    "descripcion": ""
+    "nombre": "Bermuda 2",
+    "imagen": "img/imgWebp/productos.webp/bermuda2.webp",
+    "detalles": [],
+    "categoria": "shorts",
+    "precio": "$350mxn",
+    "descripcion": "",
+    "padding": "center"
   },
   {
     "nombre": "Bolsa 1",
-    "imagen": "img/productos/bolsa1.png",
-    "detalles": ["img/productos/bolsa1.2.png"],
+    "imagen": "img/imgWebp/productos.webp/bolsa1.webp",
+    "detalles": [
+      {"src": "img/imgWebp/productos.webp/bolsa1.1.webp", "padding": "right"}
+    ],
     "categoria": "bolsas",
     "precio": "$350mxn",
-    "descripcion": ""
+    "descripcion": "",
+    "padding": "center"
   },
   {
-    "nombre": "Short Tiras",
-    "imagen": "img/productos/Short.tiras.png",
+    "nombre": "Bolsa 2",
+    "imagen": "img/imgWebp/productos.webp/bolsa2.webp",
+    "detalles": [
+      {"src": "img/imgWebp/productos.webp/bolsa2.1.webp", "padding": "left"}
+    ],
+    "categoria": "bolsas",
+    "precio": "$350mxn",
+    "descripcion": "",
+    "padding": "center"
+  },
+  {
+    "nombre": "Corbata 1",
+    "imagen": "img/imgWebp/productos.webp/corbata1.webp",
+    "detalles": [
+      {"src": "img/imgWebp/productos.webp/corbata1.1.webp", "padding": "center"}
+    ],
+    "categoria": "corbatas",
+    "precio": "$200mxn",
+    "descripcion": "",
+    "padding": "center"
+  },
+  {
+    "nombre": "Corbata 2",
+    "imagen": "img/imgWebp/productos.webp/corbata2.webp",
+    "detalles": [
+      {"src": "img/imgWebp/productos.webp/corbata2.1.webp", "padding": "right"}
+    ],
+    "categoria": "corbatas",
+    "precio": "$200mxn",
+    "descripcion": "",
+    "padding": "center"
+  },
+  {
+    "nombre": "Gorro 1",
+    "imagen": "img/imgWebp/productos.webp/gorro1.webp",
     "detalles": [],
-    "categoria": "shorts",
-    "precio": "$300mxn",
-    "descripcion": ""
+    "categoria": "gorros",
+    "precio": "$150mxn",
+    "descripcion": "",
+    "padding": "center"
+  },
+  {
+    "nombre": "Camiseta Tiras 1",
+    "imagen": "img/imgWebp/productos.webp/camisatiras1.webp",
+    "detalles": [],
+    "categoria": "tops",
+    "precio": "$250mxn",
+    "descripcion": "",
+    "padding": "center"
+  },
+  {
+    "nombre": "Camiseta Tiras 2",
+    "imagen": "img/imgWebp/productos.webp/camisatiras2.webp",
+    "detalles": [],
+    "categoria": "tops",
+    "precio": "$250mxn",
+    "descripcion": "",
+    "padding": "center"
+  },
+  {
+    "nombre": "Camiseta Tiras 3",
+    "imagen": "img/imgWebp/productos.webp/camisatiras3.webp",
+    "detalles": [],
+    "categoria": "tops",
+    "precio": "$250mxn",
+    "descripcion": "",
+    "padding": "center"
+  },
+  {
+    "nombre": "Chaleco 1",
+    "imagen": "img/imgWebp/productos.webp/chaleco1.webp",
+    "detalles": [],
+    "categoria": "chamarras",
+    "precio": "$500mxn",
+    "descripcion": "",
+    "padding": "center"
+  },
+  {
+    "nombre": "Top 1",
+    "imagen": "img/imgWebp/productos.webp/top1 (1).webp",
+    "detalles": [],
+    "categoria": "tops",
+    "precio": "$250mxn",
+    "descripcion": "",
+    "padding": "center"
   }
 ]

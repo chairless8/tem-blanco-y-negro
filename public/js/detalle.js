@@ -23,22 +23,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     function renderDetalle() {
-        // Miniaturas: principal + detalles
-        const miniaturas = [producto.imagen, ...(producto.detalles || [])];
-        let miniaturasHtml = miniaturas.map(img => `
+        // Crear array de todas las imágenes disponibles con su información de padding
+        const imagenes = [
+            { src: producto.imagen, padding: producto.padding || 'center' }, // Imagen principal
+            ...(producto.detalles || []) // Detalles ya son objetos con src y padding
+        ];
+
+        // Generar HTML para miniaturas
+        let miniaturasHtml = imagenes.map(imgObj => `
             <div class="miniatura-img mb-2">
-                <img src="${img}" alt="miniatura" class="img-miniatura ${img === imagenSeleccionada ? 'miniatura-activa' : ''}" style="width:70px; height:70px; object-fit:cover; border-radius:8px; cursor:pointer; border:2px solid ${img === imagenSeleccionada ? '#2cd502' : '#eee'};">
+                <img src="${imgObj.src}" alt="miniatura" class="img-miniatura ${imgObj.src === imagenSeleccionada ? 'miniatura-activa' : ''}" style="width:70px; height:70px; object-fit:cover; border-radius:8px; cursor:pointer; border:2px solid ${imgObj.src === imagenSeleccionada ? '#2cd502' : '#eee'};">
             </div>
         `).join('');
 
+        // Encontrar el padding de la imagen seleccionada
+        const imagenSeleccionadaObj = imagenes.find(img => img.src === imagenSeleccionada);
+        const paddingOption = imagenSeleccionadaObj ? imagenSeleccionadaObj.padding : 'center';
+
+        // Generar padding dinámico basado en la imagen seleccionada
+        let extraPadding = '';
+        switch (paddingOption) {
+            case 'center':
+                extraPadding = 'padding:0 50px;'; // 50 izquierda y derecha
+                break;
+            case 'left':
+                extraPadding = 'padding:0 100px 0 0;'; // 100 a la derecha (imagen pegada a la izquierda)
+                break;
+            case 'right':
+                extraPadding = 'padding:0 0 0 100px;'; // 100 a la izquierda (imagen pegada a la derecha)
+                break;
+            case 'none':
+            default:
+                extraPadding = '';
+        }
+
         contenedor.innerHTML = `
-            <div class="col-md-2 d-flex flex-column align-items-center">
+            <div class="col-md-2 d-flex flex-column align-items-center" style="max-width:100%; min-height:500px;">
                 ${miniaturasHtml}
             </div>
-            <div class="col-md-5 d-flex align-items-center justify-content-center">
-                <img src="${imagenSeleccionada}" alt="${producto.nombre}" class="img-fluid img-detalle-grande" style="max-width:100%; max-height:400px; border-radius:16px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <img src="${imagenSeleccionada}" alt="${producto.nombre}" class="img-fluid img-detalle-grande" style="${extraPadding}max-width:100%; max-height:400px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
             </div>
-            <div class="col-md-5 d-flex flex-column justify-content-center">
+            <div class="col-md-4 d-flex flex-column justify-content-center">
                 <h3>${producto.nombre}</h3>
                 <h4 class="text-success mb-3">${producto.precio}</h4>
                 <p>${producto.descripcion || ''}</p>
@@ -55,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.img-miniatura').forEach(img => {
             img.addEventListener('click', function() {
                 imagenSeleccionada = this.getAttribute('src');
-                renderDetalle();
+                renderDetalle(); // Re-renderizar para aplicar el nuevo padding
             });
         });
     }
