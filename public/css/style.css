@@ -60,7 +60,7 @@ h6 {
 	margin: 0;
 	color: #111111;
 	font-weight: 500;
-	font-family: "Montserrat", sans-serif;
+	font-family:"horizon", sans-serif;
 }
 
 h1 {
@@ -1314,8 +1314,8 @@ h2 {
 }
 
 .more-product .primary-btn {
-	color: #242424;
-	border-color: #D0D7DB;
+	color: #ffffff;
+	border-color: #ffffff;
 	font-weight: 700;
 }
 

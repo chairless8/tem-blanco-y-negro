@@ -1,23 +1,23 @@
 [
   {
-    "nombre": "Falda Estrellas",
+    "nombre": "Falda Nova",
     "imagen": "img/imgWebp/productos.webp/falda1.webp",
     "detalles": [
       {"src": "img/imgWebp/productos.webp/falda1.1.webp", "padding": "right"}
     ],
     "categoria": "faldas",
-    "precio": "$450mxn",
+    "precio": "$550mxn",
     "descripcion": "",
     "padding": "center"
   },
   {
-    "nombre": "Falda Azul",
+    "nombre": "Falda Tatrre",
     "imagen": "img/imgWebp/productos.webp/falda2.webp",
     "detalles": [
       {"src": "img/imgWebp/productos.webp/falda2.1.webp", "padding": "center"}
     ],
     "categoria": "faldas",
-    "precio": "$450mxn",
+    "precio": "$550mxn",
     "descripcion": "",
     "padding": "center"
   },
@@ -34,47 +34,47 @@
     "padding": "center"
   },
   {
-    "nombre": "Bermuda 1",
+    "nombre": "Bermuda Baggy 97",
     "imagen": "img/imgWebp/productos.webp/bermuda1.webp",
     "detalles": [],
     "categoria": "shorts",
-    "precio": "$350mxn",
+    "precio": "$800mxn",
     "descripcion": "",
     "padding": "center"
   },
   {
-    "nombre": "Bermuda 2",
+    "nombre": "Bermuda Dopamine",
     "imagen": "img/imgWebp/productos.webp/bermuda2.webp",
     "detalles": [],
     "categoria": "shorts",
-    "precio": "$350mxn",
+    "precio": "$800mxn",
     "descripcion": "",
     "padding": "center"
   },
   {
-    "nombre": "Bolsa 1",
+    "nombre": "Bolsa Sombra",
     "imagen": "img/imgWebp/productos.webp/bolsa1.webp",
     "detalles": [
       {"src": "img/imgWebp/productos.webp/bolsa1.1.webp", "padding": "right"}
     ],
     "categoria": "bolsas",
-    "precio": "$350mxn",
+    "precio": "$480mxn",
     "descripcion": "",
     "padding": "center"
   },
   {
-    "nombre": "Bolsa 2",
+    "nombre": "Bolsa RedLock",
     "imagen": "img/imgWebp/productos.webp/bolsa2.webp",
     "detalles": [
       {"src": "img/imgWebp/productos.webp/bolsa2.1.webp", "padding": "left"}
     ],
     "categoria": "bolsas",
-    "precio": "$350mxn",
+    "precio": "$480mxn",
     "descripcion": "",
     "padding": "center"
   },
   {
-    "nombre": "Corbata 1",
+    "nombre": "Corbata Sombra",
     "imagen": "img/imgWebp/productos.webp/corbata1.webp",
     "detalles": [
       {"src": "img/imgWebp/productos.webp/corbata1.1.webp", "padding": "center"}
@@ -85,7 +85,7 @@
     "padding": "center"
   },
   {
-    "nombre": "Corbata 2",
+    "nombre": "Corbata Nova",
     "imagen": "img/imgWebp/productos.webp/corbata2.webp",
     "detalles": [
       {"src": "img/imgWebp/productos.webp/corbata2.1.webp", "padding": "right"}
@@ -96,7 +96,7 @@
     "padding": "center"
   },
   {
-    "nombre": "Gorro 1",
+    "nombre": "Gorro Nova",
     "imagen": "img/imgWebp/productos.webp/gorro1.webp",
     "detalles": [],
     "categoria": "gorros",
@@ -105,47 +105,47 @@
     "padding": "center"
   },
   {
-    "nombre": "Camiseta Tiras 1",
+    "nombre": "Camiseta Tatrre Blanca",
     "imagen": "img/imgWebp/productos.webp/camisatiras1.webp",
     "detalles": [],
     "categoria": "tops",
-    "precio": "$250mxn",
+    "precio": "$700mxn",
     "descripcion": "",
     "padding": "center"
   },
   {
-    "nombre": "Camiseta Tiras 2",
+    "nombre": "Camiseta Tatrre Negra",
     "imagen": "img/imgWebp/productos.webp/camisatiras2.webp",
     "detalles": [],
     "categoria": "tops",
-    "precio": "$250mxn",
+    "precio": "$700mxn",
     "descripcion": "",
     "padding": "center"
   },
   {
-    "nombre": "Camiseta Tiras 3",
+    "nombre": "Camiseta Tatrre Roja",
     "imagen": "img/imgWebp/productos.webp/camisatiras3.webp",
     "detalles": [],
     "categoria": "tops",
-    "precio": "$250mxn",
+    "precio": "$700mxn",
     "descripcion": "",
     "padding": "center"
   },
   {
-    "nombre": "Chaleco 1",
+    "nombre": "Chaleco Tatrre",
     "imagen": "img/imgWebp/productos.webp/chaleco1.webp",
     "detalles": [],
     "categoria": "chamarras",
-    "precio": "$500mxn",
+    "precio": "$800mxn",
     "descripcion": "",
     "padding": "center"
   },
   {
-    "nombre": "Top 1",
+    "nombre": "Top Sombra",
     "imagen": "img/imgWebp/productos.webp/top1.webp",
     "detalles": [],
     "categoria": "tops",
-    "precio": "$250mxn",
+    "precio": "$600mxn",
     "descripcion": "",
     "padding": "center"
   }
