@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         contenedor.innerHTML = `
-            <div class="col-md-2 d-flex flex-column align-items-center" style="max-width:100%; min-height:500px;">
+            <div class="col-md-2 d-flex align-items-center detalle-miniaturas">
                 ${miniaturasHtml}
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-center">

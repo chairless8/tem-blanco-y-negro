@@ -3,7 +3,7 @@
     "nombre": "Falda Estrellas",
     "imagen": "img/imgWebp/productos.webp/falda1.webp",
     "detalles": [
-      {"src": "img/imgWebp/productos.webp/falda1.1.webp", "padding": "left"}
+      {"src": "img/imgWebp/productos.webp/falda1.1.webp", "padding": "right"}
     ],
     "categoria": "faldas",
     "precio": "$450mxn",
@@ -25,8 +25,8 @@
     "nombre": "Falda 3",
     "imagen": "img/imgWebp/productos.webp/falda3.webp",
     "detalles": [
-      {"src": "img/imgWebp/productos.webp/falda3.1.webp", "padding": "right"},
-      {"src": "img/imgWebp/productos.webp/falda3.2.webp", "padding": "left"}
+      {"src": "img/imgWebp/productos.webp/falda3.1.webp", "padding": "center"},
+      {"src": "img/imgWebp/productos.webp/falda3.2.webp", "padding": "none"}
     ],
     "categoria": "faldas",
     "precio": "$450mxn",
@@ -142,7 +142,7 @@
   },
   {
     "nombre": "Top 1",
-    "imagen": "img/imgWebp/productos.webp/top1 (1).webp",
+    "imagen": "img/imgWebp/productos.webp/top1.webp",
     "detalles": [],
     "categoria": "tops",
     "precio": "$250mxn",
