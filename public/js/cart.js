@@ -27,6 +27,11 @@ class ShoppingCart {
             const cartSidebar = document.getElementById('cartSidebar');
             const cartIcon = document.getElementById('cartIcon');
 
+            // No cerrar si se hace click en botones de eliminar del carrito
+            if (e.target.classList.contains('cart-item-remove')) {
+                return;
+            }
+
             if (cartSidebar && cartIcon &&
                 !cartSidebar.contains(e.target) &&
                 !cartIcon.contains(e.target)) {
@@ -50,18 +55,32 @@ class ShoppingCart {
     }
 
     addToCart(producto) {
-        const existingItem = this.cart.find(item => item.id === producto.id);
+        // Crear una clave única que incluye talla y color para distinguir items
+        const itemKey = this.createItemKey(producto);
+        const existingItem = this.cart.find(item => this.createItemKey(item) === itemKey);
 
         if (existingItem) {
             existingItem.quantity += 1;
         } else {
-            this.cart.push({
+            const cartItem = {
                 id: producto.id,
                 nombre: producto.nombre,
                 imagen: producto.imagen,
                 precio: producto.precio,
                 quantity: 1
-            });
+            };
+
+            // Agregar talla si está seleccionada
+            if (producto.tallaSeleccionada) {
+                cartItem.tallaSeleccionada = producto.tallaSeleccionada;
+            }
+
+            // Agregar color si está seleccionado
+            if (producto.colorSeleccionado) {
+                cartItem.colorSeleccionado = producto.colorSeleccionado;
+            }
+
+            this.cart.push(cartItem);
         }
 
         this.saveCart();
@@ -71,15 +90,54 @@ class ShoppingCart {
         this.showAddToCartFeedback();
     }
 
-    removeFromCart(productId) {
-        this.cart = this.cart.filter(item => item.id !== productId);
+    // Método auxiliar para crear una clave única para cada item del carrito
+    createItemKey(item) {
+        let key = `${item.id}`;
+        if (item.tallaSeleccionada) {
+            key += `_${item.tallaSeleccionada}`;
+        }
+        if (item.colorSeleccionado) {
+            key += `_${item.colorSeleccionado}`;
+        }
+        return key;
+    }
+
+    removeFromCart(productId, talla = null, color = null) {
+        console.log('RemoveFromCart called with:', { productId, talla, color });
+        console.log('Cart length before:', this.cart.length);
+
+        // Crear la clave para identificar el item específico a eliminar
+        const itemToRemove = {
+            id: productId,
+            tallaSeleccionada: talla === 'null' ? null : talla,
+            colorSeleccionado: color === 'null' ? null : color
+        };
+        const itemKey = this.createItemKey(itemToRemove);
+        console.log('Item key to remove:', itemKey);
+
+        // Filtrar el item específico
+        const initialLength = this.cart.length;
+        this.cart = this.cart.filter(item => {
+            const currentItemKey = this.createItemKey(item);
+            console.log('Comparing keys:', currentItemKey, 'vs', itemKey);
+            return currentItemKey !== itemKey;
+        });
+
+        console.log('Cart length after removal:', this.cart.length);
+        console.log('Items removed:', initialLength - this.cart.length);
+
         this.saveCart();
         this.updateCartDisplay();
 
-        // Solo cerrar el carrito si está vacío
-        if (this.cart.length === 0) {
-            this.closeCart();
-        }
+        // Pequeño delay antes de decidir si cerrar el carrito
+        setTimeout(() => {
+            if (this.cart.length === 0) {
+                console.log('Cart is empty, closing cart');
+                this.closeCart();
+            } else {
+                console.log('Cart still has', this.cart.length, 'items, keeping open');
+            }
+        }, 10);
     }
 
     saveCart() {
@@ -120,14 +178,33 @@ class ShoppingCart {
 
         let html = '';
         this.cart.forEach(item => {
+            // Crear información adicional de talla y color
+            let itemDetails = '';
+            if (item.tallaSeleccionada || item.colorSeleccionado) {
+                let details = [];
+                if (item.tallaSeleccionada) {
+                    details.push(`<div>Talla ${item.tallaSeleccionada}</div>`);
+                }
+                if (item.colorSeleccionado) {
+                    // Mostrar el color como un pequeño círculo
+                    details.push(`<div style="display: flex; align-items: center;">Color <span style="display: inline-block; width: 12px; height: 12px; background-color: ${item.colorSeleccionado}; border-radius: 50%; margin-left: 4px; border: 1px solid #ddd;"></span></div>`);
+                }
+                itemDetails = `<div class="cart-item-details" style="font-size: 0.85em; color: #666; margin-top: 2px;">${details.join('')}</div>`;
+            }
+
+            // Crear parámetros seguros para la función de eliminar
+            const tallaParam = item.tallaSeleccionada ? `'${item.tallaSeleccionada}'` : 'null';
+            const colorParam = item.colorSeleccionado ? `'${item.colorSeleccionado}'` : 'null';
+
             html += `
                 <div class="cart-item">
                     <img src="${item.imagen}" alt="${item.nombre}">
                     <div class="cart-item-info">
                         <div class="cart-item-name">${item.nombre}</div>
-                        <div class="cart-item-price">${item.precio} x ${item.quantity}</div>
+                        ${itemDetails}
+                        <div class="cart-item-price">${item.precio} <span class="cart-item-quantity">x ${item.quantity}</span></div>
                     </div>
-                    <button class="cart-item-remove" onclick="cart.removeFromCart(${item.id})">Eliminar</button>
+                    <button class="cart-item-remove" onclick="cart.removeFromCart(${item.id}, ${tallaParam}, ${colorParam})">Eliminar</button>
                 </div>
             `;
         });

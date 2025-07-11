@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const contenedor = document.getElementById('detalle-producto');
     let producto = null;
     let imagenSeleccionada = null;
+    let tallaSeleccionada = null;
+    let colorSeleccionado = null;
 
     fetch('productos.json')
         .then(res => res.json())
@@ -21,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Asignar ID al producto para el carrito
             producto.id = id;
             imagenSeleccionada = producto.imagen;
+            // Inicializar selecciones por defecto
+            tallaSeleccionada = producto.tallas && producto.tallas.length > 0 ? producto.tallas[0] : null;
+            colorSeleccionado = producto.colors && producto.colors.length > 0 ? producto.colors[0] : null;
             renderDetalle();
         });
 
@@ -59,6 +64,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 extraPadding = '';
         }
 
+        // Generar HTML para selección de tallas
+        let tallasHtml = '';
+        if (producto.tallas && producto.tallas.length > 0) {
+            const tallasOptions = producto.tallas.map(talla => `
+                <option value="${talla}" ${talla === tallaSeleccionada ? 'selected' : ''}>${talla}</option>
+            `).join('');
+
+            tallasHtml = `
+                <div class="mb-3">
+                    <label for="talla-select" class="form-label"><strong>Talla:</strong></label>
+                    <select class="form-select" id="talla-select" style="max-width: 120px;">
+                        ${tallasOptions}
+                    </select>
+                </div>
+            `;
+        }
+
+        // Generar HTML para selección de colores
+        let coloresHtml = '';
+        if (producto.colors && producto.colors.length > 0) {
+            const coloresSwatches = producto.colors.map(color => `
+                <div class="color-swatch ${color === colorSeleccionado ? 'color-selected' : ''}"
+                     data-color="${color}"
+                     style="width: 30px; height: 30px; background-color: ${color}; border: 2px solid ${color === colorSeleccionado ? '#2cd502' : '#ddd'}; border-radius: 50%; cursor: pointer; margin-right: 8px; display: inline-block;">
+                </div>
+            `).join('');
+
+            coloresHtml = `
+                <div class="mb-3">
+                    <label class="form-label"><strong>Color:</strong></label>
+                    <div class="d-flex flex-wrap" id="color-swatches">
+                        ${coloresSwatches}
+                    </div>
+                </div>
+            `;
+        }
+
         contenedor.innerHTML = `
             <div class="col-md-2 d-flex align-items-center detalle-miniaturas">
                 ${miniaturasHtml}
@@ -70,11 +112,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h3>${producto.nombre}</h3>
                 <h4 class="text-success mb-3">${producto.precio}</h4>
                 <p class="descripcion-producto">${producto.descripcion || ''}</p>
-                <div class="mt-4">
-                    <button class="primary-btn me-3 p-4" id="comprar-ya-btn">Comprar ya</button>
+
+                ${tallasHtml}
+                ${coloresHtml}
+
+                <div class="mt-2">
+                    <button class="primary-btn me-3 p-3" id="comprar-ya-btn">Comprar ya</button>
                 </div>
-                <div class="mt-4">
-                    <button class="site-btn p-4" id="agregar-carrito-btn">Agregar al carrito</button>
+                <div class="mt-2">
+                    <button class="site-btn p-3" id="agregar-carrito-btn">Agregar al carrito</button>
                 </div>
 
             </div>
@@ -85,6 +131,23 @@ document.addEventListener('DOMContentLoaded', function() {
             img.addEventListener('click', function() {
                 imagenSeleccionada = this.getAttribute('src');
                 renderDetalle(); // Re-renderizar para aplicar el nuevo padding
+            });
+        });
+
+        // Listener para selección de talla
+        const tallaSelect = document.getElementById('talla-select');
+        if (tallaSelect) {
+            tallaSelect.addEventListener('change', function() {
+                tallaSeleccionada = this.value;
+            });
+        }
+
+        // Listeners para selección de color
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+            swatch.addEventListener('click', function() {
+                colorSeleccionado = this.getAttribute('data-color');
+                // Re-renderizar para actualizar la selección visual
+                renderDetalle();
             });
         });
 
@@ -99,7 +162,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (agregarBtn) {
             agregarBtn.addEventListener('click', function() {
                 if (typeof cart !== 'undefined' && cart && producto) {
-                    cart.addToCart(producto);
+                    // Crear copia del producto con las selecciones actuales
+                    const productoConSelecciones = {
+                        ...producto,
+                        tallaSeleccionada: tallaSeleccionada,
+                        colorSeleccionado: colorSeleccionado
+                    };
+                    cart.addToCart(productoConSelecciones);
                     showAddToCartFeedback(this, '¡Agregado!');
                 } else {
                     console.error('Sistema de carrito no disponible');
@@ -110,7 +179,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (comprarBtn) {
             comprarBtn.addEventListener('click', function() {
                 if (typeof cart !== 'undefined' && cart && producto) {
-                    cart.addToCart(producto);
+                    // Crear copia del producto con las selecciones actuales
+                    const productoConSelecciones = {
+                        ...producto,
+                        tallaSeleccionada: tallaSeleccionada,
+                        colorSeleccionado: colorSeleccionado
+                    };
+                    cart.addToCart(productoConSelecciones);
                     //showAddToCartFeedback(this, '¡Agregado!');
 
                     // Abrir el carrito después de un pequeño delay

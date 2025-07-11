@@ -8,7 +8,9 @@
     "categoria": "faldas",
     "precio": "$550mxn",
     "descripcion": "Mini falda de mezclilla con parches laterales de estrella, cremallera en el frente y boton.",
-    "padding": "center"
+    "padding": "center",
+    "tallas": ["XS","S", "M", "L", "XL","XXL"],
+    "colors": ["#000000", "#ffffff"]
   },
   {
     "nombre": "Falda Tatrre",
@@ -19,7 +21,9 @@
     "categoria": "faldas",
     "precio": "$550mxn",
     "descripcion": "",
-    "padding": "center"
+    "padding": "center",
+    "tallas": ["XS","S", "M", "L", "XL","XXL"],
+    "colors": ["#000000", "#ffffff", "#0000ff"]
   },
   {
     "nombre": "Falda Lineas",

@@ -774,6 +774,8 @@ h2 {
 .product-item .product-text h6 {
     margin: 10px 0;
     font-size: 16px;
+	min-height: 40px;
+    align-content: center;
 }
 
 .product-item .product-text p {
@@ -2659,4 +2661,18 @@ img.img-grande {
     min-height: 500px;
 	flex-direction: row;
   }
+}
+
+/* Bramante background image section */
+.bramante-bg {
+    background-image: url('./../img/imgWebp/bramante.webp');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+@media (max-width: 767px) {
+    .bramante-bg {
+        height: 400px;
+    }
 }

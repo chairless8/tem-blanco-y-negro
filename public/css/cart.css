@@ -225,6 +225,16 @@
     margin-bottom: 35px;
 }
 
+.cart-item-quantity {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.primary-btn {
+    margin-top: 0px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     #detalle-producto h3 {
