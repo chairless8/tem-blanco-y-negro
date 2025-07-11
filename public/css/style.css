@@ -98,7 +98,7 @@ h6 {
 
 p {
 	font-size: 15px;
-	color: #000000;
+	color: #424242;
 	font-weight: 400;
 	line-height: 1.6;
 	font-family: "Montserrat", sans-serif;
@@ -757,7 +757,7 @@ h2 {
     width: calc(25% - 20px); /* 4 columnas por fila */
     box-sizing: border-box;
     text-align: center;
-    padding: 10px;
+    padding: 25px;
 }
 
 .product-item figure {
@@ -2542,6 +2542,7 @@ h2 {
   }
   .lupita-blanca {
     display: inline;
+	height: 27px;
   }
 
   li > .search-trigger {

@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 contenedor.innerHTML = '<div class="col-12 text-center"><h3>Producto no encontrado</h3></div>';
                 return;
             }
+            // Asignar ID al producto para el carrito
+            producto.id = id;
             imagenSeleccionada = producto.imagen;
             renderDetalle();
         });
@@ -67,13 +69,14 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-md-4 d-flex flex-column justify-content-center">
                 <h3>${producto.nombre}</h3>
                 <h4 class="text-success mb-3">${producto.precio}</h4>
-                <p>${producto.descripcion || ''}</p>
+                <p class="descripcion-producto">${producto.descripcion || ''}</p>
                 <div class="mt-4">
-                    <button class="primary-btn me-3 p-4">Comprar ya</button>
+                    <button class="primary-btn me-3 p-4" id="comprar-ya-btn">Comprar ya</button>
                 </div>
                 <div class="mt-4">
-                    <button class="site-btn p-4">Agregar al carrito</button>
+                    <button class="site-btn p-4" id="agregar-carrito-btn">Agregar al carrito</button>
                 </div>
+
             </div>
         `;
 
@@ -84,5 +87,55 @@ document.addEventListener('DOMContentLoaded', function() {
                 renderDetalle(); // Re-renderizar para aplicar el nuevo padding
             });
         });
+
+        // Listeners para botones del carrito
+        setupCartButtons();
+    }
+
+    function setupCartButtons() {
+        const agregarBtn = document.getElementById('agregar-carrito-btn');
+        const comprarBtn = document.getElementById('comprar-ya-btn');
+
+        if (agregarBtn) {
+            agregarBtn.addEventListener('click', function() {
+                if (typeof cart !== 'undefined' && cart && producto) {
+                    cart.addToCart(producto);
+                    showAddToCartFeedback(this, '¡Agregado!');
+                } else {
+                    console.error('Sistema de carrito no disponible');
+                }
+            });
+        }
+
+        if (comprarBtn) {
+            comprarBtn.addEventListener('click', function() {
+                if (typeof cart !== 'undefined' && cart && producto) {
+                    cart.addToCart(producto);
+                    //showAddToCartFeedback(this, '¡Agregado!');
+
+                    // Abrir el carrito después de un pequeño delay
+                    setTimeout(() => {
+                        cart.openCart();
+                    }, 500);
+                } else {
+                    console.error('Sistema de carrito no disponible');
+                }
+            });
+        }
+    }
+
+    function showAddToCartFeedback(button, message) {
+        const originalText = button.textContent;
+        const originalColor = button.style.backgroundColor;
+
+        button.textContent = message;
+        button.style.backgroundColor = '#2cd502';
+        button.disabled = true;
+
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.style.backgroundColor = originalColor;
+            button.disabled = false;
+        }, 1500);
     }
 });

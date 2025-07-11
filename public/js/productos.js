@@ -47,9 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p>${producto.precio}</p>
                         </div>
                     </a>
-                    <button class="add-to-cart-btn" onclick="addToCartFromRender(${index})">
-                        Agregar al Carrito
-                    </button>
                 </div>
             `;
         });

@@ -4,16 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de Producto | IceGreen</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css?v=1.3" type="text/css">
+    <link rel="stylesheet" href="css/cart.css?v=1.1" type="text/css">
     <link rel="icon" type="image/png" href="img/hielo1.png">
-</head>
-<body>
+  </head>
+  <body>
+      <!-- Page Preloder -->
+      <div id="preloder">
+          <div class="loader"></div>
+      </div>
+
+      <!-- Search model -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Buscar.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="container-fluid">
@@ -29,6 +53,13 @@
                         <li><a class="active" href="./tienda.html">Tienda</a></li>
                         <li><a href="./aboutme.html">Sobre mi</a></li>
                         <li><a href="./contact.html">Contacto</a></li>
+                        <li>
+                            <div class="search-trigger">
+                                <img src="img/icons/lupita.png" alt="Buscar" class="lupita-normal">
+                                <!-- Lupita blanca para pantallas pequeñas -->
+                                <img src="img/icons/lupitablanca.png" alt="Buscar" class="lupita-blanca">
+                            </div>
+                        </li>
                     </ul>
                     <div class="header-right"></div>
                 </nav>
@@ -36,6 +67,27 @@
         </div>
     </header>
     <!-- Header Section End -->
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h5>Carrito de Compras</h5>
+            <button class="cart-close" id="cartClose">X</button>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <!-- Cart total and confirm button will be loaded here -->
+        </div>
+    </div>
+    <!-- Cart Sidebar End -->
+
+    <!-- Floating Cart Icon -->
+    <div class="cart-icon" id="cartIcon">
+        <i class="fa fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
 
     <!-- Page Add Section Begin -->
     <section class="page-add">
@@ -95,6 +147,7 @@
                         <div class="single-footer-widget">
                             <h4>Otros</h4>
                             <ul>
+                                <li class="search-trigger">Buscar</li>
                                 <li><a href="./gallery.html">Galería</a></li>
                                 <li><a href="./tienda.html">Tienda</a></li>
                                 <li><a href="./sizes.html">Tallas y Guias de medidas</a></li>
@@ -124,10 +177,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/mixitup.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/detalle.js"></script>
 </body>
 </html>

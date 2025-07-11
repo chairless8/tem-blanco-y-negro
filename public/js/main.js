@@ -170,4 +170,41 @@
         $(this).toggleClass('active');
     });
 
+    /*------------------
+        Mobile Menu Fix
+    --------------------*/
+    // Cerrar menú móvil al hacer click en un enlace
+    $(document).on('click', '.slicknav_nav a', function() {
+        // Solo cerrar si es un enlace de navegación (no un submenu)
+        if ($(this).attr('href') && $(this).attr('href').indexOf('#') !== 0) {
+            $('.slicknav_btn').click();
+        }
+    });
+
+    // Cerrar menú móvil al hacer click fuera del menú
+    $(document).on('click', function(e) {
+        // Solo aplicar en dispositivos móviles (cuando el menú slicknav está visible)
+        if ($('.slicknav_menu').is(':visible')) {
+            var $target = $(e.target);
+            var $menu = $('.slicknav_menu');
+
+            // Si el click no fue en el menú ni en sus elementos hijos
+            if (!$target.closest('.slicknav_menu').length &&
+                !$target.closest('.header-section').length &&
+                $menu.find('.slicknav_nav').is(':visible')) {
+                $('.slicknav_btn').click();
+            }
+        }
+    });
+
+    // Cerrar menú móvil cuando se redimensiona la ventana a desktop
+    $(window).on('resize', function() {
+        if ($(window).width() > 767) {
+            // Si el menú móvil está abierto, cerrarlo
+            if ($('.slicknav_nav').is(':visible')) {
+                $('.slicknav_btn').click();
+            }
+        }
+    });
+
 })(jQuery);

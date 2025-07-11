@@ -7,7 +7,7 @@
     ],
     "categoria": "faldas",
     "precio": "$550mxn",
-    "descripcion": "",
+    "descripcion": "Mini falda de mezclilla con parches laterales de estrella, cremallera en el frente y boton.",
     "padding": "center"
   },
   {
@@ -22,7 +22,7 @@
     "padding": "center"
   },
   {
-    "nombre": "Falda 3",
+    "nombre": "Falda Lineas",
     "imagen": "img/imgWebp/productos.webp/falda3.webp",
     "detalles": [
       {"src": "img/imgWebp/productos.webp/falda3.1.webp", "padding": "center"},
@@ -57,7 +57,7 @@
     "detalles": [
       {"src": "img/imgWebp/productos.webp/bolsa1.1.webp", "padding": "right"}
     ],
-    "categoria": "bolsas",
+    "categoria": "accesorios",
     "precio": "$480mxn",
     "descripcion": "",
     "padding": "center"
@@ -68,7 +68,7 @@
     "detalles": [
       {"src": "img/imgWebp/productos.webp/bolsa2.1.webp", "padding": "left"}
     ],
-    "categoria": "bolsas",
+    "categoria": "accesorios",
     "precio": "$480mxn",
     "descripcion": "",
     "padding": "center"
@@ -79,7 +79,7 @@
     "detalles": [
       {"src": "img/imgWebp/productos.webp/corbata1.1.webp", "padding": "center"}
     ],
-    "categoria": "corbatas",
+    "categoria": "accesorios",
     "precio": "$200mxn",
     "descripcion": "",
     "padding": "center"
@@ -90,7 +90,7 @@
     "detalles": [
       {"src": "img/imgWebp/productos.webp/corbata2.1.webp", "padding": "right"}
     ],
-    "categoria": "corbatas",
+    "categoria": "accesorios",
     "precio": "$200mxn",
     "descripcion": "",
     "padding": "center"
@@ -99,7 +99,7 @@
     "nombre": "Gorro Nova",
     "imagen": "img/imgWebp/productos.webp/gorro1.webp",
     "detalles": [],
-    "categoria": "gorros",
+    "categoria": "accesorios",
     "precio": "$150mxn",
     "descripcion": "",
     "padding": "center"
@@ -108,7 +108,7 @@
     "nombre": "Camiseta Tatrre Blanca",
     "imagen": "img/imgWebp/productos.webp/camisatiras1.webp",
     "detalles": [],
-    "categoria": "tops",
+    "categoria": "camisetas",
     "precio": "$700mxn",
     "descripcion": "",
     "padding": "center"
@@ -117,7 +117,7 @@
     "nombre": "Camiseta Tatrre Negra",
     "imagen": "img/imgWebp/productos.webp/camisatiras2.webp",
     "detalles": [],
-    "categoria": "tops",
+    "categoria": "camisetas",
     "precio": "$700mxn",
     "descripcion": "",
     "padding": "center"
@@ -126,7 +126,7 @@
     "nombre": "Camiseta Tatrre Roja",
     "imagen": "img/imgWebp/productos.webp/camisatiras3.webp",
     "detalles": [],
-    "categoria": "tops",
+    "categoria": "camisetas",
     "precio": "$700mxn",
     "descripcion": "",
     "padding": "center"
