@@ -34,7 +34,7 @@
     ],
     "categoria": "faldas",
     "precio": "$450mxn",
-    "descripcion": "",
+    "descripcion": "Falda con patoles asimetricos, cremallera en el frente y boton. Pieza única talla M",
     "padding": "center"
   },
   {
@@ -43,8 +43,10 @@
     "detalles": [],
     "categoria": "shorts",
     "precio": "$800mxn",
-    "descripcion": "",
-    "padding": "center"
+    "descripcion": "Bermuda de mezclilla baggy, corte de pierna ancha con altura a media pantorrilla, bolsas traseras, cremallera en el frente y boton.",
+    "padding": "center",
+    "tallas": ["28","30", "32", "34", "36","38"],
+    "colors": ["#000000", "#0e1a42"]
   },
   {
     "nombre": "Bermuda Dopamine",
@@ -52,8 +54,10 @@
     "detalles": [],
     "categoria": "shorts",
     "precio": "$800mxn",
-    "descripcion": "",
-    "padding": "center"
+    "descripcion": "Bermuda baggy de tela de mezclilla en color blanco, color del estampado elegible, corte de pierna ancha con altura por debajo de la rodilla, bolsas traseras, cremallera en el frente y boton.",
+    "padding": "center",
+    "tallas": ["28","30", "32", "34", "36","38"],
+    "colors": ["#6bdd00", "#da00dd","#8700ff","#ff0000"]
   },
   {
     "nombre": "Bolsa Sombra",
@@ -62,9 +66,10 @@
       {"src": "img/imgWebp/productos.webp/bolsa1.1.webp", "padding": "right"}
     ],
     "categoria": "accesorios",
-    "precio": "$480mxn",
-    "descripcion": "",
-    "padding": "center"
+    "precio": "$500mxn",
+    "descripcion": "Bolsa de tiras estilo dramático, tejida a mano con tela de algodón, detalles metálicos en la asa boton de iman. ",
+    "padding": "center",
+    "colors": ["#000000", "#a50000","#ab0077","#0d1e76"]
   },
   {
     "nombre": "Bolsa RedLock",
@@ -73,9 +78,10 @@
       {"src": "img/imgWebp/productos.webp/bolsa2.1.webp", "padding": "left"}
     ],
     "categoria": "accesorios",
-    "precio": "$480mxn",
-    "descripcion": "",
-    "padding": "center"
+    "precio": "$500mxn",
+    "descripcion": "Bolsa tejida a mano con tela de algodón, cadena y aros metálicos en la asa, seguros de difernetes tamaños en ambas caras de la bolsa y boton de iman.",
+    "padding": "center",
+    "colors": ["#000000", "#a50000","#ab0077","#0d1e76"]
   },
   {
     "nombre": "Corbata Sombra",
@@ -84,7 +90,7 @@
       {"src": "img/imgWebp/productos.webp/corbata1.1.webp", "padding": "center"}
     ],
     "categoria": "accesorios",
-    "precio": "$200mxn",
+    "precio": "$350mxn",
     "descripcion": "",
     "padding": "center"
   },
@@ -95,45 +101,34 @@
       {"src": "img/imgWebp/productos.webp/corbata2.1.webp", "padding": "right"}
     ],
     "categoria": "accesorios",
-    "precio": "$200mxn",
+    "precio": "$350mxn",
     "descripcion": "",
     "padding": "center"
   },
   {
-    "nombre": "Gorro Nova",
+    "nombre": "Bucket hat Nova",
     "imagen": "img/imgWebp/productos.webp/gorro1.webp",
     "detalles": [],
     "categoria": "accesorios",
-    "precio": "$150mxn",
+    "precio": "$350mxn",
     "descripcion": "",
-    "padding": "center"
-  },
-  {
-    "nombre": "Camiseta Tatrre Blanca",
-    "imagen": "img/imgWebp/productos.webp/camisatiras1.webp",
-    "detalles": [],
-    "categoria": "camisetas",
-    "precio": "$700mxn",
-    "descripcion": "",
-    "padding": "center"
-  },
-  {
-    "nombre": "Camiseta Tatrre Negra",
-    "imagen": "img/imgWebp/productos.webp/camisatiras2.webp",
-    "detalles": [],
-    "categoria": "camisetas",
-    "precio": "$700mxn",
-    "descripcion": "",
-    "padding": "center"
+    "padding": "center",
+    "tallas": ["S","M","L"],
+    "colors": ["#000000", "#0e1a42","#5494ff" ]
   },
   {
     "nombre": "Camiseta Tatrre Roja",
     "imagen": "img/imgWebp/productos.webp/camisatiras3.webp",
-    "detalles": [],
+    "detalles": [
+      {"src": "img/imgWebp/productos.webp/camisatiras1.webp", "padding": "center"},
+      {"src": "img/imgWebp/productos.webp/camisatiras2.webp", "padding": "center"}
+    ],
     "categoria": "camisetas",
-    "precio": "$700mxn",
-    "descripcion": "",
-    "padding": "center"
+    "precio": "$750mxn",
+    "descripcion": "Camisa plizada oversize con mecanismo de tiras ajustables, que te permitiran modificar la forma y caida de la prenda, botones en la parte frontal y en puños.",
+    "padding": "center",
+    "tallas": ["M","L","XL","XXL"],
+    "colors": ["#000000", "#ffffff","#ca0900" ]
   },
   {
     "nombre": "Chaleco Tatrre",
@@ -141,8 +136,10 @@
     "detalles": [],
     "categoria": "chamarras",
     "precio": "$800mxn",
-    "descripcion": "",
-    "padding": "center"
+    "descripcion": "Chaleco oversize confeccionado en mezclilla con un acabado deconstruido, técnica patch-work: paneles cuadrados de mezclilla detalles en redesilachados.",
+    "padding": "center",
+    "tallas": ["M","L","XL","XXL"],
+    "colors": ["#000000", "#0e1a42"]
   },
   {
     "nombre": "Top Sombra",
@@ -150,7 +147,9 @@
     "detalles": [],
     "categoria": "tops",
     "precio": "$600mxn",
-    "descripcion": "",
-    "padding": "center"
+    "descripcion": "Top de mezclilla en caida digonal con hombro descubierto, manga con boton en puño.",
+    "padding": "center",
+    "tallas": ["XS","S","M","L","XL"],
+    "colors": ["#000000", "#173e83","#5492ff" ]
   }
 ]
