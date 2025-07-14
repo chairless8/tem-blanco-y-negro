@@ -170,6 +170,9 @@ ol {
 	font-family: horizon, sans-serif;
 	font-size:medium;
 }
+.margin-0{
+	margin: 0 !important;
+}
 
 /* buttons */
 
