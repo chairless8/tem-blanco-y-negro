@@ -215,5 +215,17 @@
     "padding": "center",
     "tallas": ["XS","S","M","L","XL"],
     "colors": ["#8c631a", "#b60202","#00318d" ]
+  },
+   {
+    "id": 18,
+    "nombre": "Short Tatrre",
+    "imagen": "img/imgWebp/productos.webp/short1.webp",
+    "detalles": [{"src": "img/imgWebp/productos.webp/short1.1.webp", "padding": "none"}],
+    "categoria": "shorts",
+    "precio": "$900mxn",
+    "descripcion": "Short confeccionado en mezclilla con un acabado deconstruido, técnica patch-work con detalles en redesilachados. Bolsillos laterales y traseros.",
+    "padding": "center",
+    "tallas": ["28","30", "32", "34", "36","38"],
+    "colors": ["#000000", "#173e83"]
   }
 ]
