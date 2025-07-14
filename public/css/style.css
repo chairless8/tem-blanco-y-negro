@@ -196,7 +196,7 @@ ol {
 .site-btn {
 	color: #1e1e1e;
 	display: inline-block;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: 600;
 	padding: 16px 40px;
 	border: 2px solid #1e1e1e;
@@ -612,7 +612,7 @@ h2 {
     background-color: #000;
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 12px;
     border-radius: 50px;
     margin-top: 50px;
 }
@@ -649,6 +649,7 @@ h2 {
 
 .features-ads {
     padding: 50px 30px;
+	background: #e9e9e9;
 }
 
 .features-ads .single-features-ads {
@@ -959,8 +960,7 @@ h2 {
 .footer-section {
 	background: #262626;
 	padding-bottom: 0;
-	margin-top: 80px;
-}
+	margin-top: 80px;}
 .footer-section ul li a{
 	color: #ffffff;
 }
