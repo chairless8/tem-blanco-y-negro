@@ -5,11 +5,26 @@ document.addEventListener('DOMContentLoaded', function() {
     let productos = [];
     let categoriaActual = '';
 
+    // Obtener categoría de los parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoriaParam = urlParams.get('categoria');
+    if (categoriaParam) {
+        categoriaActual = categoriaParam.toLowerCase().trim();
+    }
+
     // Cargar productos desde el JSON
     fetch('productos.json')
         .then(res => res.json())
         .then(data => {
             productos = data;
+            // Establecer el selector con la categoría de la URL si existe
+            if (categoriaActual && selector) {
+                selector.value = categoriaActual;
+                // Disparar evento para que Nice Select se actualice
+                if (typeof $ !== 'undefined') {
+                    $(selector).niceSelect('update');
+                }
+            }
             renderProductos();
         });
 
@@ -33,12 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         let html = '<div class="productos-grid-general">';
         filtrados.forEach((producto, i) => {
-            const index = productos.indexOf(producto);
-            // Add id to producto for cart functionality
-            producto.id = index;
             html += `
                 <div class="producto-grande">
-                    <a href="detalle.html?id=${index}">
+                    <a href="detalle.html?id=${producto.id}">
                         <figure>
                             <img src="${producto.imagen}" alt="${producto.nombre}" class="img-grande">
                         </figure>
@@ -55,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Global function for add to cart button
-    window.addToCartFromRender = function(index) {
-        const producto = productos[index];
+    window.addToCartFromRender = function(productId) {
+        const producto = productos.find(p => p.id === productId);
         if (producto && cart) {
             cart.addToCart(producto);
             showAddToCartFeedback();
@@ -75,9 +87,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }
 
-    function renderProductoLigero(producto, index) {
+    function renderProductoLigero(producto) {
         return `
-            <a href="detalle.html?id=${index}" class="producto-ligero">
+            <a href="detalle.html?id=${producto.id}" class="producto-ligero">
                 <img src="${producto.imagen}" alt="${producto.nombre}" class="img-ligera">
                 <div class="nombre-ligero">${producto.nombre}</div>
             </a>

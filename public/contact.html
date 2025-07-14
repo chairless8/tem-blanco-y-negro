@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css?v=1.1" type="text/css">
+    <link rel="stylesheet" href="css/contact.css?v=1.0" type="text/css">
     <link rel="icon" type="image/png" href="img/hielo1.png">
 </head>
 
@@ -100,21 +101,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <form action="#" class="contact-form">
+                    <form id="contactForm" class="contact-form">
                         <div class="row">
                             <div class="col-lg-6">
-                                <input type="text" placeholder="Nombre">
+                                <input type="text" id="firstName" name="firstName" placeholder="Nombre" required>
                             </div>
                             <div class="col-lg-6">
-                                <input type="text" placeholder="Apellido">
+                                <input type="text" id="lastName" name="lastName" placeholder="Apellido" required>
                             </div>
                             <div class="col-lg-12">
-                                <input type="email" placeholder="E-mail">
-                                <input type="text" placeholder="Asunto">
-                                <textarea placeholder="Mensaje"></textarea>
+                                <input type="email" id="email" name="email" placeholder="E-mail" required>
+                                <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+                                <textarea id="message" name="message" placeholder="Mensaje" rows="5" required></textarea>
                             </div>
                             <div class="col-lg-12 text-right">
-                                <button type="submit">Mandar Mensaje</button>
+                                <button type="submit" id="sendMessageBtn">
+                                    <span class="btn-text">Mandar Mensaje</span>
+                                    <span class="btn-loading" style="display: none;">Enviando...</span>
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -137,7 +141,7 @@
                         <div class="cw-item">
                             <h5>E-mail</h5>
                             <ul>
-                                <li>icegreen.mxx@gmail.com</li>
+                                <li>icegreen.mx@gmail.com</li>
                                 <li>www.icegreen.com</li>
                             </ul>
                         </div>
@@ -224,7 +228,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> IceGr
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/mixitup.min.js"></script>
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- EmailJS Configuration -->
+    <script src="js/emailjs-config.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>

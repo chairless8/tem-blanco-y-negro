@@ -15,13 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('productos.json')
         .then(res => res.json())
         .then(data => {
-            producto = data[id];
+            // Buscar producto por ID en lugar de por índice
+            producto = data.find(p => p.id === id);
             if (!producto) {
                 contenedor.innerHTML = '<div class="col-12 text-center"><h3>Producto no encontrado</h3></div>';
                 return;
             }
-            // Asignar ID al producto para el carrito
-            producto.id = id;
             imagenSeleccionada = producto.imagen;
             // Inicializar selecciones por defecto
             tallaSeleccionada = producto.tallas && producto.tallas.length > 0 ? producto.tallas[0] : null;

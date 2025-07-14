@@ -1,12 +1,131 @@
 class ShoppingCart {
     constructor() {
         this.cart = JSON.parse(localStorage.getItem('cart')) || [];
+        this.emailjsInitialized = false;
         this.init();
     }
 
     init() {
         this.bindEvents();
         this.updateCartDisplay();
+        this.createOrderModal();
+        this.initEmailJS();
+    }
+
+        initEmailJS() {
+        // Usar configuración del archivo separado
+        if (window.EMAILJS_CONFIG) {
+            this.EMAIL_CONFIG = window.EMAILJS_CONFIG;
+        } else {
+            console.error('No se encontró la configuración de EmailJS. Asegúrate de incluir emailjs-config.js');
+            return;
+        }
+
+        // Verificar si EmailJS está configurado
+        if (!window.EMAILJS_CONFIGURED) {
+            console.warn('⚠️ EmailJS no está configurado. Revisa el archivo emailjs-config.js');
+            return;
+        }
+
+        // Inicializar EmailJS cuando esté disponible
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init(this.EMAIL_CONFIG.PUBLIC_KEY);
+            this.emailjsInitialized = true;
+            console.log('✅ EmailJS inicializado correctamente');
+        } else {
+            console.warn('EmailJS no está disponible. Asegúrate de incluir el script.');
+        }
+    }
+
+    createOrderModal() {
+        // Crear el modal HTML dinámicamente
+        const modalHTML = `
+            <div id="orderModal" class="order-modal" style="display: none;">
+                <div class="order-modal-content">
+                    <div class="order-modal-header">
+                        <h2>Confirmar Orden</h2>
+                        <span class="order-modal-close">&times;</span>
+                    </div>
+                    <div class="order-modal-body">
+                        <div class="order-summary">
+                            <h3>Resumen de tu orden:</h3>
+                            <div id="orderSummaryContent"></div>
+                            <div class="order-total-section">
+                                <strong>Total: <span id="orderModalTotal">$0</span></strong>
+                            </div>
+                        </div>
+
+                        <form id="orderForm" class="order-form">
+                            <div class="form-group">
+                                <label for="customerName">Nombre completo *</label>
+                                <input type="text" id="customerName" name="customerName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerEmail">Correo electrónico *</label>
+                                <input type="email" id="customerEmail" name="customerEmail" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerPhone">Teléfono *</label>
+                                <input type="tel" id="customerPhone" name="customerPhone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerAddress">Dirección de envío</label>
+                                <textarea id="customerAddress" name="customerAddress" rows="3" placeholder="Dirección completa para el envío"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="orderNotes">Notas adicionales</label>
+                                <textarea id="orderNotes" name="orderNotes" rows="2" placeholder="Comentarios especiales, instrucciones de entrega, etc."></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-cancel" onclick="cart.closeOrderModal()">Cancelar</button>
+                                <button type="submit" class="btn-confirm" id="confirmOrderBtn">
+                                    <span class="btn-text">Enviar Orden</span>
+                                    <span class="btn-loading" style="display: none;">Enviando...</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Insertar el modal en el body
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+        // Agregar estilos CSS para el modal
+        this.addModalStyles();
+
+        // Bind events para el modal
+        this.bindModalEvents();
+    }
+
+        addModalStyles() {
+        // Los estilos del modal ahora están en cart.css
+        // Esta función ya no es necesaria pero se mantiene para compatibilidad
+        console.log('Estilos del modal cargados desde cart.css');
+    }
+
+    bindModalEvents() {
+        // Close modal events
+        const modal = document.getElementById('orderModal');
+        const closeBtn = modal.querySelector('.order-modal-close');
+
+        closeBtn.addEventListener('click', () => this.closeOrderModal());
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                this.closeOrderModal();
+            }
+        });
+
+        // Form submission
+        const orderForm = document.getElementById('orderForm');
+        orderForm.addEventListener('submit', (e) => this.handleOrderSubmission(e));
     }
 
     bindEvents() {
@@ -235,8 +354,171 @@ class ShoppingCart {
     }
 
     confirmOrder() {
-        console.log('Productos en el carrito:', this.cart);
-        alert('Orden confirmada. Revisa la consola para ver los productos.');
+        if (this.cart.length === 0) {
+            alert('Tu carrito está vacío');
+            return;
+        }
+        this.openOrderModal();
+    }
+
+    openOrderModal() {
+        const orderModal = document.getElementById('orderModal');
+        if (orderModal) {
+            orderModal.style.display = 'flex';
+            this.updateOrderModalContent();
+        }
+    }
+
+    closeOrderModal() {
+        const orderModal = document.getElementById('orderModal');
+        if (orderModal) {
+            orderModal.style.display = 'none';
+        }
+    }
+
+    updateOrderModalContent() {
+        const orderModalTotal = document.getElementById('orderModalTotal');
+        const orderSummaryContent = document.getElementById('orderSummaryContent');
+
+        if (!orderModalTotal || !orderSummaryContent) return;
+
+        const total = this.getCartTotal();
+        orderModalTotal.textContent = `$${total.toLocaleString()}mxn`;
+
+        let summaryHtml = '';
+        this.cart.forEach(item => {
+            let itemDetails = '';
+            if (item.tallaSeleccionada || item.colorSeleccionado) {
+                let details = [];
+                if (item.tallaSeleccionada) {
+                    details.push(`Talla: ${item.tallaSeleccionada}`);
+                }
+                if (item.colorSeleccionado) {
+                    details.push(`Color: <span style="display: inline-block; width: 12px; height: 12px; background-color: ${item.colorSeleccionado}; border-radius: 50%; margin-left: 4px; border: 1px solid #ddd;"></span>`);
+                }
+                itemDetails = `<div class="order-item-details">${details.join(' | ')}</div>`;
+            }
+
+            const itemPrice = parseInt(item.precio.replace(/[^0-9]/g, ''));
+            summaryHtml += `
+                <div class="order-item">
+                    <div class="order-item-info">
+                        <div class="order-item-name">${item.nombre} x${item.quantity}</div>
+                        ${itemDetails}
+                    </div>
+                    <div class="order-item-price">$${(itemPrice * item.quantity).toLocaleString()}mxn</div>
+                </div>
+            `;
+        });
+        orderSummaryContent.innerHTML = summaryHtml;
+    }
+
+    generateOrderId() {
+        const now = new Date();
+        return `ICE-${now.getFullYear()}${(now.getMonth() + 1).toString().padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
+    }
+
+    buildCartEmailRows() {
+        return this.cart.map(item => {
+            let details = '';
+            if (item.tallaSeleccionada || item.colorSeleccionado) {
+                let detailsArray = [];
+                if (item.tallaSeleccionada) {
+                    detailsArray.push(`Talla: ${item.tallaSeleccionada}`);
+                }
+                if (item.colorSeleccionado) {
+                    detailsArray.push(`Color: ${item.colorSeleccionado}`);
+                }
+                details = `<div style="font-size:12px;color:#666;margin-top:4px;">${detailsArray.join(' | ')}</div>`;
+            }
+
+            const itemPrice = parseInt(item.precio.replace(/[^0-9]/g, ''));
+            return `
+                <tr style="vertical-align:top">
+                    <td style="padding:12px 8px;border-bottom:1px solid #eee;">
+                        <div style="font-weight:500;">${item.nombre}</div>
+                        ${details}
+                        <div style="font-size:14px;color:#888;margin-top:4px;">Cantidad: ${item.quantity}</div>
+                    </td>
+                    <td style="padding:12px 8px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap">
+                        <strong>$${(itemPrice * item.quantity).toLocaleString()}mxn</strong>
+                    </td>
+                </tr>
+            `;
+        }).join('');
+    }
+
+    async handleOrderSubmission(e) {
+        e.preventDefault();
+
+        if (!this.emailjsInitialized) {
+            alert('EmailJS no está inicializado. Asegúrate de que el script de EmailJS esté cargado.');
+            return;
+        }
+
+        const orderForm = document.getElementById('orderForm');
+        const formData = new FormData(orderForm);
+        const customerData = Object.fromEntries(formData);
+
+        const confirmOrderBtn = document.getElementById('confirmOrderBtn');
+        const btnText = confirmOrderBtn.querySelector('.btn-text');
+        const btnLoading = confirmOrderBtn.querySelector('.btn-loading');
+
+        // Deshabilitar botón y mostrar loading
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline-block';
+        confirmOrderBtn.disabled = true;
+
+        try {
+            const orderId = this.generateOrderId();
+            const cartRows = this.buildCartEmailRows();
+            const total = this.getCartTotal();
+
+            const templateParams = {
+                to_email: 'icegreen.mx@gmail.com',
+                order_id: orderId,
+                customer_name: customerData.customerName,
+                customer_email: customerData.customerEmail,
+                customer_phone: customerData.customerPhone,
+                customer_address: customerData.customerAddress || 'No especificada',
+                order_notes: customerData.orderNotes || 'Sin notas adicionales',
+                order_rows: cartRows,
+                total: total.toLocaleString(),
+                order_date: new Date().toLocaleDateString('es-MX', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                })
+            };
+
+            // Enviar email usando EmailJS
+            const response = await emailjs.send(
+                this.EMAIL_CONFIG.SERVICE_ID,
+                this.EMAIL_CONFIG.TEMPLATE_ID_CART,
+                templateParams
+            );
+
+            console.log('Email enviado con éxito:', response);
+
+            // Mostrar mensaje de éxito
+            alert(`¡Orden ${orderId} enviada con éxito!\n\nHemos enviado la confirmación a ${customerData.customerEmail}.\nNos pondremos en contacto contigo pronto al ${customerData.customerPhone}.`);
+
+            // Limpiar carrito y cerrar modal
+            this.clearCart();
+            this.closeOrderModal();
+            orderForm.reset();
+
+        } catch (error) {
+            console.error('Error al enviar el email:', error);
+            alert('Hubo un error al enviar la orden. Por favor, verifica tus datos e intenta nuevamente.');
+        } finally {
+            // Restaurar estado del botón
+            btnText.style.display = 'inline-block';
+            btnLoading.style.display = 'none';
+            confirmOrderBtn.disabled = false;
+        }
     }
 
     getCart() {
@@ -259,6 +541,8 @@ class ShoppingCart {
             return sum + (price * item.quantity);
         }, 0);
     }
+
+
 }
 
 // Create global cart instance
