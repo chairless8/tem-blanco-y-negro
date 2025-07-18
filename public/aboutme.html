@@ -99,19 +99,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="product-slider owl-carousel aboutme-slider">
-                        <div class="product-img">
-                            <figure>
-                                <img src="img/sobremi2.jpg" alt="">
-                            </figure>
-                        </div>
-                        <div class="product-img">
-                            <figure>
-                                <img src="img/sobremi1.jpg" alt="">
-                            </figure>
-                        </div>
+                    <div class="simple-slideshow">
+                        <img src="img/imgWebp/aboutme1.webp" alt="" class="slide">
+                        <img src="img/imgWebp/aboutme2.webp" alt="" class="slide">
                     </div>
-
                 </div>
                 <div class="col-lg-6">
                     <div class="product-content">
@@ -245,5 +236,43 @@
   .product-content {
     margin: 20px; /* Puedes ajustar el valor */
   }
+}
+
+/* Estilos para el slideshow simple */
+.simple-slideshow {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.simple-slideshow .slide {
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.simple-slideshow .slide:first-child {
+  animation: fade 10s infinite;
+}
+
+.simple-slideshow .slide:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fade-reverse 10s infinite;
+}
+
+@keyframes fade {
+  0%, 45% { opacity: 1; }
+  50%, 95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade-reverse {
+  0%, 45% { opacity: 0; }
+  50%, 95% { opacity: 1; }
+  100% { opacity: 0; }
 }
 </style>

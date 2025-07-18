@@ -63,21 +63,71 @@ document.addEventListener('DOMContentLoaded', function() {
                 extraPadding = '';
         }
 
+                // Definir tallas estáticas
+        const TALLAS_FEMENINAS = [1, 3, 5, 7, 9, 11]; // 0-11
+        const TALLAS_MASCULINAS = [28, 30, 32, 34, 36, 38];
+
         // Generar HTML para selección de tallas
         let tallasHtml = '';
         if (producto.tallas && producto.tallas.length > 0) {
-            const tallasOptions = producto.tallas.map(talla => `
-                <option value="${talla}" ${talla === tallaSeleccionada ? 'selected' : ''}>${talla}</option>
-            `).join('');
+            // Verificar si hay tallas especiales "Female" o "Male"
+            const tieneF = producto.tallas.includes("Female");
+            const tieneM = producto.tallas.includes("Male");
 
-            tallasHtml = `
-                <div class="mb-3">
-                    <label for="talla-select" class="form-label"><strong>Talla:</strong></label>
-                    <select class="form-select" id="talla-select" style="max-width: 120px;">
-                        ${tallasOptions}
-                    </select>
-                </div>
-            `;
+            // Si tiene tallas especiales (F o M)
+            if (tieneF || tieneM) {
+                // Determinar el género inicial
+                let generoInicial = tieneF ? 'Female' : 'Male';
+
+                // Selector de tipo de talla (género)
+                let generoOptions = '';
+                if (tieneF) generoOptions += '<option value="Female">F</option>';
+                if (tieneM) generoOptions += '<option value="Male">M</option>';
+
+                // Opciones para tallas femeninas
+                const tallasFOptions = TALLAS_FEMENINAS.map(num =>
+                    `<option value="${num}">${num}</option>`
+                ).join('');
+
+                // Opciones para tallas masculinas
+                const tallasMOptions = TALLAS_MASCULINAS.map(num =>
+                    `<option value="${num}">${num}</option>`
+                ).join('');
+
+                tallasHtml = `
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label class="form-label w-100"><strong>GENERO</strong></label>
+                            <select class="form-select" id="genero-select">
+                                ${generoOptions}
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label w-100"><strong>TALLA</strong></label>
+                            <select class="form-select" id="talla-f-select" style="${generoInicial === 'Female' ? '' : 'display:none;'}">
+                                ${tallasFOptions}
+                            </select>
+                            <select class="form-select" id="talla-m-select" style="${generoInicial === 'Male' ? '' : 'display:none;'}">
+                                ${tallasMOptions}
+                            </select>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // Si son tallas normales (S, M, L, etc.)
+                const tallasOptions = producto.tallas.map(talla => `
+                    <option value="${talla}" ${talla === tallaSeleccionada ? 'selected' : ''}>${talla}</option>
+                `).join('');
+
+                tallasHtml = `
+                    <div class="mb-3">
+                        <label for="talla-select" class="form-label"><strong>Talla:</strong></label>
+                        <select class="form-select" id="talla-select" style="max-width: 120px;">
+                            ${tallasOptions}
+                        </select>
+                    </div>
+                `;
+            }
         }
 
         // Generar HTML para selección de colores
@@ -105,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ${miniaturasHtml}
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-center">
-                <img src="${imagenSeleccionada}" alt="${producto.nombre}" class="img-fluid img-detalle-grande" style="${extraPadding}max-width:100%; max-height:400px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                <img src="${imagenSeleccionada}" alt="${producto.nombre}" class="img-fluid img-detalle-grande" style="${extraPadding}max-width:100%; max-height:410px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
             </div>
             <div class="col-md-4 d-flex flex-column justify-content-center">
                 <h3>${producto.nombre}</h3>
@@ -133,12 +183,84 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Listener para selección de talla
-        const tallaSelect = document.getElementById('talla-select');
-        if (tallaSelect) {
-            tallaSelect.addEventListener('change', function() {
-                tallaSeleccionada = this.value;
-            });
+                // Verificar si hay tallas especiales "Female" o "Male"
+        const tieneF = producto.tallas && producto.tallas.includes("Female");
+        const tieneM = producto.tallas && producto.tallas.includes("Male");
+
+        // Manejar tallas especiales (F/M)
+        if (tieneF || tieneM) {
+            const generoSelect = document.getElementById('genero-select');
+            const tallaFSelect = document.getElementById('talla-f-select');
+            const tallaMSelect = document.getElementById('talla-m-select');
+
+            if (generoSelect && tallaFSelect && tallaMSelect) {
+                // Establecer valores iniciales
+                const generoInicial = generoSelect.value;
+
+                if (generoInicial === 'Female' && tallaFSelect.options.length > 0) {
+                    tallaSeleccionada = {
+                        tipo: 'Female',
+                        numero: tallaFSelect.options[0].value
+                    };
+                } else if (generoInicial === 'Male' && tallaMSelect.options.length > 0) {
+                    tallaSeleccionada = {
+                        tipo: 'Male',
+                        numero: tallaMSelect.options[0].value
+                    };
+                }
+
+                // Listener para cambio de género
+                generoSelect.addEventListener('change', function() {
+                    const genero = this.value;
+
+                    // Mostrar/ocultar selectores según el género
+                    if (genero === 'Female') {
+                        tallaFSelect.style.display = '';
+                        tallaMSelect.style.display = 'none';
+                        tallaSeleccionada = {
+                            tipo: 'Female',
+                            numero: tallaFSelect.value
+                        };
+                    } else {
+                        tallaFSelect.style.display = 'none';
+                        tallaMSelect.style.display = '';
+                        tallaSeleccionada = {
+                            tipo: 'Male',
+                            numero: tallaMSelect.value
+                        };
+                    }
+
+                    console.log('Talla seleccionada:', tallaSeleccionada);
+                });
+
+                                // Listener para talla femenina
+                tallaFSelect.addEventListener('change', function() {
+                    tallaSeleccionada = {
+                        tipo: 'Female',
+                        numero: this.value
+                    };
+                    console.log('Talla seleccionada:', tallaSeleccionada);
+                });
+
+                // Listener para talla masculina
+                tallaMSelect.addEventListener('change', function() {
+                    tallaSeleccionada = {
+                        tipo: 'Male',
+                        numero: this.value
+                    };
+                    console.log('Talla seleccionada:', tallaSeleccionada);
+                });
+            }
+        }
+        // Manejar tallas normales
+        else {
+            const tallaSelect = document.getElementById('talla-select');
+            if (tallaSelect) {
+                tallaSelect.addEventListener('change', function() {
+                    tallaSeleccionada = this.value;
+                    console.log('Talla seleccionada:', tallaSeleccionada);
+                });
+            }
         }
 
         // Listeners para selección de color
@@ -165,7 +287,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     const productoConSelecciones = {
                         ...producto,
                         tallaSeleccionada: tallaSeleccionada,
-                        colorSeleccionado: colorSeleccionado
+                        colorSeleccionado: colorSeleccionado,
+                        // Agregar información descriptiva para tallas especiales
+                        tallaDescriptiva: getTallaDescriptiva(tallaSeleccionada)
                     };
                     cart.addToCart(productoConSelecciones);
                     showAddToCartFeedback(this, '¡Agregado!');
@@ -211,5 +335,22 @@ document.addEventListener('DOMContentLoaded', function() {
             button.style.backgroundColor = originalColor;
             button.disabled = false;
         }, 1500);
+    }
+
+            // Función para obtener descripción amigable de la talla
+    function getTallaDescriptiva(talla) {
+        if (!talla) return '';
+
+        // Si es un objeto de talla especial
+        if (typeof talla === 'object' && talla.tipo && talla.numero) {
+            if (talla.tipo === 'Female') {
+                return `Talla ${talla.numero} (Femenina)`;
+            } else if (talla.tipo === 'Male') {
+                return `Talla ${talla.numero} (Masculina)`;
+            }
+        }
+
+        // Si es una talla regular
+        return `Talla ${talla}`;
     }
 });
