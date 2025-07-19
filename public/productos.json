@@ -4,7 +4,8 @@
     "nombre": "Falda Nova",
     "imagen": "img/imgWebp/productos.webp/falda1.webp",
     "detalles": [
-      {"src": "img/imgWebp/productos.webp/falda1.1.webp", "padding": "right"}
+      {"src": "img/imgWebp/productos.webp/falda1.1.webp", "padding": "right"},
+      {"src": "img/imgWebp/productos.webp/falda1.3.webp", "padding": "none"}
     ],
     "categoria": "faldas",
     "precio": "$550mxn",
@@ -18,14 +19,16 @@
     "nombre": "Falda Tatrre",
     "imagen": "img/imgWebp/productos.webp/falda2.webp",
     "detalles": [
-      {"src": "img/imgWebp/productos.webp/falda2.1.webp", "padding": "left"}
+      {"src": "img/imgWebp/productos.webp/falda2.1.webp", "padding": "left"},
+      {"src": "img/imgWebp/productos.webp/falda2.2.webp", "padding": "center"},
+      {"src": "img/imgWebp/productos.webp/falda2.3.webp", "padding": "center"}
     ],
     "categoria": "faldas",
     "precio": "$550mxn",
     "descripcion": "Minifalsa de mezclilla con un acabado deconstruido, técnica patch-work: paneles cuadrados de mezclilla detalles en redesilachados. Bolsas traseras, cremallera y botón al frente",
     "padding": "center",
     "tallas": ["XS","S", "M", "L", "XL","XXL"],
-    "colors": ["#000000", "#ffffff", "#0000ff"]
+    "colors": ["#000000", "#ffffff", "#0e1a42"]
   },
   {
     "id":3,
@@ -49,19 +52,23 @@
     "precio": "$800mxn",
     "descripcion": "Bermuda de mezclilla baggy, corte de pierna ancha con altura a media pantorrilla, bolsas traseras, cremallera en el frente y botón.",
     "padding": "center",
-    "tallas": ["F","M"],
+    "tallas": ["Female","Male"],
     "colors": ["#000000", "#0e1a42"]
   },
   {
     "id": 5,
     "nombre": "Bermuda Dopamine",
     "imagen": "img/imgWebp/productos.webp/bermuda2.webp",
-    "detalles": [],
+    "detalles": [
+        {"src": "img/imgWebp/productos.webp/bermuda2.2.webp", "padding": "none"},
+        {"src": "img/imgWebp/productos.webp/bermuda2.3.webp", "padding": "none"},
+        {"src": "img/imgWebp/productos.webp/bermuda2.4.webp", "padding": "none"}
+    ],
     "categoria": "shorts",
     "precio": "$800mxn",
     "descripcion": "Bermuda baggy de tela de mezclilla en color blanco, color del estampado elegible, corte de pierna ancha con altura por debajo de la rodilla, bolsas traseras, cremallera en el frente y botón.",
     "padding": "center",
-    "tallas": ["F","M"],
+    "tallas": ["Female","Male"],
     "colors": ["#6bdd00", "#da00dd","#8700ff","#ff0000"]
   },
   {
@@ -69,7 +76,10 @@
     "nombre": "Bolsa Sombra",
     "imagen": "img/imgWebp/productos.webp/bolsa1.webp",
     "detalles": [
-      {"src": "img/imgWebp/productos.webp/bolsa1.1.webp", "padding": "right"}
+        {"src": "img/imgWebp/productos.webp/bolsa1.1.webp", "padding": "right"},
+        {"src": "img/imgWebp/productos.webp/bolsa1.2.webp", "padding": "center"},
+        {"src": "img/imgWebp/productos.webp/bolsa1.3.webp", "padding": "center"},
+        {"src": "img/imgWebp/productos.webp/bolsa1.4.webp", "padding": "center"}
     ],
     "categoria": "accesorios",
     "precio": "$500mxn",
@@ -138,7 +148,7 @@
     ],
     "categoria": "camisetas",
     "precio": "$750mxn",
-    "descripcion": "Camisa plizada oversize con mecanismo de tiras ajustables, que te permitiran modificar la forma y caida de la prenda, botones en la parte frontal y en puños.",
+    "descripcion": "Camisa plizada oversize con mecanismo de tiras ajustables, que te permitiran modificar la forma y caida de la prenda, botones en la parte frontal y en puños. Medidas a elegir son masculinas",
     "padding": "center",
     "tallas": ["S","M","L","XL","XXL"],
     "colors": ["#000000", "#ffffff","#ca0900" ]
@@ -150,9 +160,9 @@
     "detalles": [],
     "categoria": "chamarras",
     "precio": "$800mxn",
-    "descripcion": "Chaleco oversize confeccionado en mezclilla con un acabado deconstruido, técnica patch-work: paneles cuadrados de mezclilla detalles en redesilachados.",
+    "descripcion": "Chaleco oversize confeccionado en mezclilla con un acabado deconstruido, técnica patch-work: paneles cuadrados de mezclilla detalles en redesilachados. Las medidas a elegir son masculinas",
     "padding": "center",
-    "tallas": ["M","L","XL","XXL"],
+    "tallas": ["S","M","L","XL","XXL"],
     "colors": ["#000000", "#0e1a42"]
   },
   {
@@ -162,7 +172,7 @@
     "detalles": [{"src": "img/imgWebp/productos.webp/top2.1.webp", "padding": "none"}],
     "categoria": "tops",
     "precio": "$600mxn",
-    "descripcion": "Top de mezclilla en caida digonal con hombro descubierto, manga con botón en puño.",
+    "descripcion": "Top de mezclilla en caida digonal con hombro descubierto, manga con botón en puño. La medidas de eleccion son femeninas",
     "padding": "center",
     "tallas": ["XS","S","M","L","XL"],
     "colors": ["#000000", "#173e83","#5492ff" ]
@@ -177,7 +187,7 @@
     "precio": "$650mxn",
     "descripcion": "Conjunto bermuda baggy de tela a cuadros, corte de pierba ancha, altura a media pantorrilla, bolsillos laterales y traseros .",
     "padding": "center",
-    "tallas": ["F","M"],
+    "tallas": ["Female","Male"],
     "colors": ["#8c631a", "#b60202","#00318d" ]
   },
   {
@@ -213,7 +223,7 @@
     "precio": "$400mxn",
     "descripcion": "Top conjunto Tartán 68, tiras agustables en cuello y cintura, espalda descubierta y capucha.",
     "padding": "center",
-    "tallas": ["S", "M", "L"],
+    "tallas": ["XS","S", "M", "L","XL"],
     "colors": ["#8c631a", "#b60202","#00318d" ]
   },
    {
@@ -226,6 +236,18 @@
     "descripcion": "Short confeccionado en mezclilla con un acabado deconstruido, técnica patch-work con detalles en redesilachados. Bolsillos laterales y traseros.",
     "padding": "center",
     "tallas": ["Female","Male"],
+    "colors": ["#000000", "#173e83"]
+  },
+  {
+    "id": 19,
+    "nombre": "Pantalón Tatrre",
+    "imagen": "img/imgWebp/productos.webp/pantalon1.webp",
+    "detalles": [],
+    "categoria": "pantalones",
+    "precio": "$1200mxn",
+    "descripcion": "Pantalón confeccionado en mezclilla con un acabado deconstruido, técnica patch-work con detalles en redesilachados. Bolsillos laterales y traseros.",
+    "padding": "center",
+    "tallas": ["Female"],
     "colors": ["#000000", "#173e83"]
   }
 ]
