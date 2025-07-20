@@ -77,9 +77,9 @@
     "imagen": "img/imgWebp/productos.webp/bolsa1.webp",
     "detalles": [
         {"src": "img/imgWebp/productos.webp/bolsa1.1.webp", "padding": "right"},
-        {"src": "img/imgWebp/productos.webp/bolsa1.2.webp", "padding": "center"},
-        {"src": "img/imgWebp/productos.webp/bolsa1.3.webp", "padding": "center"},
-        {"src": "img/imgWebp/productos.webp/bolsa1.4.webp", "padding": "center"}
+        {"src": "img/imgWebp/productos.webp/bolsa1.2.webp", "padding": "center", "color":"#a50000"},
+        {"src": "img/imgWebp/productos.webp/bolsa1.3.webp", "padding": "center", "color":"#ab0077"},
+        {"src": "img/imgWebp/productos.webp/bolsa1.4.webp", "padding": "center", "color":"#0d1e76"}
     ],
     "categoria": "accesorios",
     "precio": "$500mxn",
@@ -220,7 +220,7 @@
     "imagen": "img/imgWebp/productos.webp/top3.webp",
     "detalles": [],
     "categoria": "tops",
-    "precio": "$400mxn",
+    "precio": "$500mxn",
     "descripcion": "Top conjunto Tartán 68, tiras agustables en cuello y cintura, espalda descubierta y capucha.",
     "padding": "center",
     "tallas": ["XS","S", "M", "L","XL"],
@@ -230,7 +230,7 @@
     "id": 18,
     "nombre": "Short Tatrre",
     "imagen": "img/imgWebp/productos.webp/short1.webp",
-    "detalles": [{"src": "img/imgWebp/productos.webp/short1.1.webp", "padding": "none"}],
+    "detalles": [{"src": "img/imgWebp/productos.webp/short1.1.webp", "padding": "none", "color":"#173e83"}],
     "categoria": "shorts",
     "precio": "$900mxn",
     "descripcion": "Short confeccionado en mezclilla con un acabado deconstruido, técnica patch-work con detalles en redesilachados. Bolsillos laterales y traseros.",
@@ -287,5 +287,5 @@
     "tallas": ["L"],
     "colors": ["#ef6804"]
   }
-  
+
 ]

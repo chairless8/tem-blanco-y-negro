@@ -25,20 +25,35 @@ document.addEventListener('DOMContentLoaded', function() {
             // Inicializar selecciones por defecto
             tallaSeleccionada = producto.tallas && producto.tallas.length > 0 ? producto.tallas[0] : null;
             colorSeleccionado = producto.colors && producto.colors.length > 0 ? producto.colors[0] : null;
+
+            // Si hay un color seleccionado por defecto (el primero), usar la imagen principal
+            if (colorSeleccionado && producto.colors && producto.colors[0] === colorSeleccionado) {
+                imagenSeleccionada = producto.imagen;
+            }
+            // Si no es el primer color, buscar si hay una imagen con el color seleccionado
+            else if (colorSeleccionado && producto.detalles) {
+                const imagenConColor = producto.detalles.find(detalle => detalle.color === colorSeleccionado);
+                if (imagenConColor) {
+                    imagenSeleccionada = imagenConColor.src;
+                }
+            }
+
             renderDetalle();
         });
 
     function renderDetalle() {
-        // Crear array de todas las imágenes disponibles con su información de padding
+        // Crear array de todas las imágenes disponibles con su información de padding y color
         const imagenes = [
             { src: producto.imagen, padding: producto.padding || 'center' }, // Imagen principal
-            ...(producto.detalles || []) // Detalles ya son objetos con src y padding
+            ...(producto.detalles || []) // Detalles ya son objetos con src, padding y posiblemente color
         ];
 
         // Generar HTML para miniaturas
         let miniaturasHtml = imagenes.map(imgObj => `
             <div class="miniatura-img mb-2">
-                <img src="${imgObj.src}" alt="miniatura" class="img-miniatura ${imgObj.src === imagenSeleccionada ? 'miniatura-activa' : ''}" style="width:70px; height:70px; object-fit:cover; border-radius:8px; cursor:pointer; border:2px solid ${imgObj.src === imagenSeleccionada ? '#2cd502' : '#eee'};">
+                <img src="${imgObj.src}" alt="miniatura" class="img-miniatura ${imgObj.src === imagenSeleccionada ? 'miniatura-activa' : ''}"
+                     style="width:70px; height:70px; object-fit:cover; border-radius:8px; cursor:pointer; border:2px solid ${imgObj.src === imagenSeleccionada ? '#2cd502' : '#eee'};"
+                     data-color="${imgObj.color || ''}">
             </div>
         `).join('');
 
@@ -266,7 +281,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // Listeners para selección de color
         document.querySelectorAll('.color-swatch').forEach(swatch => {
             swatch.addEventListener('click', function() {
-                colorSeleccionado = this.getAttribute('data-color');
+                const nuevoColor = this.getAttribute('data-color');
+                colorSeleccionado = nuevoColor;
+
+                // Si es el primer color de la lista, seleccionar la imagen principal
+                if (producto.colors && producto.colors[0] === nuevoColor) {
+                    imagenSeleccionada = producto.imagen;
+                }
+                // Si no es el primer color, buscar si hay una imagen con el color seleccionado
+                else if (producto.detalles) {
+                    const imagenConColor = producto.detalles.find(detalle => detalle.color === nuevoColor);
+                    if (imagenConColor) {
+                        imagenSeleccionada = imagenConColor.src;
+                    }
+                }
+
                 // Re-renderizar para actualizar la selección visual
                 renderDetalle();
             });
