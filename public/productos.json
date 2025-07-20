@@ -60,9 +60,9 @@
     "nombre": "Bermuda Dopamine",
     "imagen": "img/imgWebp/productos.webp/bermuda2.webp",
     "detalles": [
-        {"src": "img/imgWebp/productos.webp/bermuda2.2.webp", "padding": "none"},
-        {"src": "img/imgWebp/productos.webp/bermuda2.3.webp", "padding": "none"},
-        {"src": "img/imgWebp/productos.webp/bermuda2.4.webp", "padding": "none"}
+        {"src": "img/imgWebp/productos.webp/bermuda2.2.webp", "padding": "none","color":"#da00dd"},
+        {"src": "img/imgWebp/productos.webp/bermuda2.3.webp", "padding": "none","color":"#8700ff"},
+        {"src": "img/imgWebp/productos.webp/bermuda2.4.webp", "padding": "none", "color":"#ff0000"}
     ],
     "categoria": "shorts",
     "precio": "$800mxn",

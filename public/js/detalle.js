@@ -213,15 +213,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const generoInicial = generoSelect.value;
 
                 if (generoInicial === 'Female' && tallaFSelect.options.length > 0) {
-                    tallaSeleccionada = {
-                        tipo: 'Female',
-                        numero: tallaFSelect.options[0].value
-                    };
+                    tallaSeleccionada = tallaFSelect.options[0].value;
                 } else if (generoInicial === 'Male' && tallaMSelect.options.length > 0) {
-                    tallaSeleccionada = {
-                        tipo: 'Male',
-                        numero: tallaMSelect.options[0].value
-                    };
+                    tallaSeleccionada = tallaMSelect.options[0].value;
                 }
 
                 // Listener para cambio de género
@@ -232,17 +226,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (genero === 'Female') {
                         tallaFSelect.style.display = '';
                         tallaMSelect.style.display = 'none';
-                        tallaSeleccionada = {
-                            tipo: 'Female',
-                            numero: tallaFSelect.value
-                        };
+                        tallaSeleccionada = tallaFSelect.value;
                     } else {
                         tallaFSelect.style.display = 'none';
                         tallaMSelect.style.display = '';
-                        tallaSeleccionada = {
-                            tipo: 'Male',
-                            numero: tallaMSelect.value
-                        };
+                        tallaSeleccionada = tallaMSelect.value;
                     }
 
                     console.log('Talla seleccionada:', tallaSeleccionada);
@@ -250,19 +238,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                                 // Listener para talla femenina
                 tallaFSelect.addEventListener('change', function() {
-                    tallaSeleccionada = {
-                        tipo: 'Female',
-                        numero: this.value
-                    };
+                    tallaSeleccionada = this.value;
                     console.log('Talla seleccionada:', tallaSeleccionada);
                 });
 
                 // Listener para talla masculina
                 tallaMSelect.addEventListener('change', function() {
-                    tallaSeleccionada = {
-                        tipo: 'Male',
-                        numero: this.value
-                    };
+                    tallaSeleccionada = this.value;
                     console.log('Talla seleccionada:', tallaSeleccionada);
                 });
             }

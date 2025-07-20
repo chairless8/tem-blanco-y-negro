@@ -187,10 +187,21 @@ class ShoppingCart {
         if (existingItem) {
             existingItem.quantity += 1;
         } else {
+            // Determinar la imagen a usar basada en el color seleccionado
+            let imagenAUsar = producto.imagen; // Imagen principal por defecto
+
+            // Si hay un color seleccionado y detalles con imágenes
+            if (producto.colorSeleccionado && producto.detalles) {
+                const imagenConColor = producto.detalles.find(detalle => detalle.color === producto.colorSeleccionado);
+                if (imagenConColor) {
+                    imagenAUsar = imagenConColor.src;
+                }
+            }
+
             const cartItem = {
                 id: producto.id,
                 nombre: producto.nombre,
-                imagen: producto.imagen,
+                imagen: imagenAUsar,
                 precio: producto.precio,
                 quantity: 1
             };
@@ -471,7 +482,16 @@ class ShoppingCart {
         return `ICE-${now.getFullYear()}${(now.getMonth() + 1).toString().padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
     }
 
-    buildCartEmailRows() {
+    async buildCartEmailRows() {
+        // Cargar el diccionario de colores
+        let colorMap = {};
+        try {
+            const response = await fetch('color-dictionary.json');
+            colorMap = await response.json();
+        } catch (error) {
+            console.warn('No se pudo cargar el diccionario de colores:', error);
+        }
+
         return this.cart.map(item => {
             let details = '';
             if (item.tallaSeleccionada || item.colorSeleccionado) {
@@ -480,7 +500,9 @@ class ShoppingCart {
                     detailsArray.push(`Talla: ${item.tallaSeleccionada}`);
                 }
                 if (item.colorSeleccionado) {
-                    detailsArray.push(`Color: ${item.colorSeleccionado}`);
+                    // Buscar el nombre del color en el diccionario, usar el código si no se encuentra
+                    const colorName = colorMap[item.colorSeleccionado] || item.colorSeleccionado;
+                    detailsArray.push(`Color: ${colorName}`);
                 }
                 details = `<div style="font-size:12px;color:#666;margin-top:4px;">${detailsArray.join(' | ')}</div>`;
             }
@@ -524,7 +546,7 @@ class ShoppingCart {
 
         try {
             const orderId = this.generateOrderId();
-            const cartRows = this.buildCartEmailRows();
+            const cartRows = await this.buildCartEmailRows();
             const total = this.getCartTotal();
 
             const templateParams = {
