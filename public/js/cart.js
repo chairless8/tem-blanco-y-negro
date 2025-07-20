@@ -151,6 +151,12 @@ class ShoppingCart {
                 return;
             }
 
+            // No cerrar si se hace click en los botones de cantidad
+            if (e.target.classList.contains('quantity-btn') ||
+                e.target.closest('.cart-item-quantity-controls')) {
+                return;
+            }
+
             if (cartSidebar && cartIcon &&
                 !cartSidebar.contains(e.target) &&
                 !cartIcon.contains(e.target)) {
@@ -315,19 +321,66 @@ class ShoppingCart {
             const tallaParam = item.tallaSeleccionada ? `'${item.tallaSeleccionada}'` : 'null';
             const colorParam = item.colorSeleccionado ? `'${item.colorSeleccionado}'` : 'null';
 
+            // Controles de cantidad con botones + y -
+            const quantityControls = `
+                <div class="cart-item-quantity-controls">
+                    <button class="quantity-btn minus-btn ${item.quantity <= 1 ? 'disabled' : ''}"
+                            ${item.quantity <= 1 ? 'disabled' : ''}
+                            onclick="event.stopPropagation(); cart.decreaseQuantity(${item.id}, ${tallaParam}, ${colorParam})">-</button>
+                    <span class="quantity-value">${item.quantity}</span>
+                    <button class="quantity-btn plus-btn"
+                            onclick="event.stopPropagation(); cart.increaseQuantity(${item.id}, ${tallaParam}, ${colorParam})">+</button>
+                </div>
+            `;
+
             html += `
                 <div class="cart-item">
                     <img src="${item.imagen}" alt="${item.nombre}">
                     <div class="cart-item-info">
                         <div class="cart-item-name">${item.nombre}</div>
                         ${itemDetails}
-                        <div class="cart-item-price">${item.precio} <span class="cart-item-quantity">x ${item.quantity}</span></div>
+                        <div class="cart-item-price">${item.precio}</div>
+                        ${quantityControls}
                     </div>
-                    <button class="cart-item-remove" onclick="cart.removeFromCart(${item.id}, ${tallaParam}, ${colorParam})">Eliminar</button>
+                    <button class="cart-item-remove" onclick="event.stopPropagation(); cart.removeFromCart(${item.id}, ${tallaParam}, ${colorParam})">Eliminar</button>
                 </div>
             `;
         });
         cartContent.innerHTML = html;
+    }
+
+    // Método para aumentar la cantidad de un producto en el carrito
+    increaseQuantity(productId, talla = null, color = null) {
+        const itemToUpdate = {
+            id: productId,
+            tallaSeleccionada: talla === 'null' ? null : talla,
+            colorSeleccionado: color === 'null' ? null : color
+        };
+        const itemKey = this.createItemKey(itemToUpdate);
+
+        const item = this.cart.find(item => this.createItemKey(item) === itemKey);
+        if (item) {
+            item.quantity += 1;
+            this.saveCart();
+            this.updateCartDisplay();
+        }
+    }
+
+    // Método para disminuir la cantidad de un producto en el carrito
+    decreaseQuantity(productId, talla = null, color = null) {
+        const itemToUpdate = {
+            id: productId,
+            tallaSeleccionada: talla === 'null' ? null : talla,
+            colorSeleccionado: color === 'null' ? null : color
+        };
+        const itemKey = this.createItemKey(itemToUpdate);
+
+        const item = this.cart.find(item => this.createItemKey(item) === itemKey);
+        if (item && item.quantity > 1) {
+            item.quantity -= 1;
+            this.saveCart();
+            this.updateCartDisplay();
+        }
     }
 
     renderCartFooter() {

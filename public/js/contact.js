@@ -135,12 +135,12 @@ class ContactForm {
         messageElement.className = `form-message ${type}`;
         messageElement.textContent = message;
 
-        // Auto-ocultar después de 5 segundos
+        // Auto-ocultar después de 10 segundos
         setTimeout(() => {
             if (messageElement.parentNode) {
                 messageElement.parentNode.removeChild(messageElement);
             }
-        }, 5000);
+        }, 10000);
     }
 
     // Método para enviar confirmación al cliente (opcional)
