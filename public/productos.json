@@ -249,5 +249,43 @@
     "padding": "center",
     "tallas": ["Female"],
     "colors": ["#000000", "#173e83"]
+  },
+  {
+    "id": 20,
+    "nombre": "Gorro Grado 45",
+    "imagen": "img/imgWebp/productos.webp/gorro2.webp",
+    "detalles": [{"src": "img/imgWebp/productos.webp/gorro2.1.webp", "padding": "left"}],
+    "categoria": "accesorios",
+    "precio": "$350mxn",
+    "descripcion": "Gorro marinero de mezclilla",
+    "padding": "center",
+    "tallas": ["S", "M", "L"],
+    "colors": ["#000000", "#173e83"]
+  },
+  {
+    "id": 21,
+    "nombre": "Chamarra Vector 90",
+    "imagen": "img/imgWebp/productos.webp/chamarra1.webp",
+    "detalles": [{"src": "img/imgWebp/productos.webp/chamarra1.1.webp", "padding": "left"}],
+    "categoria": "chamarras",
+    "precio": "$800mxn",
+    "descripcion": "Chamarra conjunto Vector 90, corte boxy. Pieza unica en talla L.",
+    "padding": "center",
+    "tallas": ["L"],
+    "colors": ["#ef6804"]
+  },
+  {
+    "id": 22,
+    "nombre": "Bermuda conjunto Vector 90",
+    "imagen": "img/imgWebp/productos.webp/bermuda4.webp",
+    "detalles": [{"src": "img/imgWebp/productos.webp/bermuda4.1.webp", "padding": "none"},
+                {"src": "img/imgWebp/productos.webp/bermuda4.2.webp", "padding": "left"}],
+    "categoria": "shorts",
+    "precio": "$800mxn",
+    "descripcion": "Bermuda conjunto Vector 90, corte de pierna ancha.Pieza unica en talla L.",
+    "padding": "center",
+    "tallas": ["L"],
+    "colors": ["#ef6804"]
   }
+  
 ]
