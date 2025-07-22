@@ -5,10 +5,10 @@
     "imagen": "img/imgWebp/productos.webp/falda1.webp",
     "detalles": [
       {"src": "img/imgWebp/productos.webp/falda1.1.webp", "padding": "right"},
-      {"src": "img/imgWebp/productos.webp/falda1.3.webp", "padding": "none"}
+      {"src": "img/imgWebp/productos.webp/falda1.3.webp", "padding": "none", "color":"#ffffff"}
     ],
     "categoria": "faldas",
-    "precio": "$550mxn",
+    "precio": "$600mxn",
     "descripcion": "Mini falda de mezclilla con parches laterales de estrella, cremallera en el frente y botón.",
     "padding": "center",
     "tallas": ["XS","S", "M", "L", "XL","XXL"],
@@ -20,15 +20,15 @@
     "imagen": "img/imgWebp/productos.webp/falda2.webp",
     "detalles": [
       {"src": "img/imgWebp/productos.webp/falda2.1.webp", "padding": "left"},
-      {"src": "img/imgWebp/productos.webp/falda2.2.webp", "padding": "center"},
-      {"src": "img/imgWebp/productos.webp/falda2.3.webp", "padding": "center"}
+      {"src": "img/imgWebp/productos.webp/falda2.2.webp", "padding": "center","color":"#000000"},
+      {"src": "img/imgWebp/productos.webp/falda2.3.webp", "padding": "center","color":"#ffffff"}
     ],
     "categoria": "faldas",
-    "precio": "$550mxn",
+    "precio": "$600mxn",
     "descripcion": "Minifalsa de mezclilla con un acabado deconstruido, técnica patch-work: paneles cuadrados de mezclilla detalles en redesilachados. Bolsas traseras, cremallera y botón al frente",
     "padding": "center",
     "tallas": ["XS","S", "M", "L", "XL","XXL"],
-    "colors": ["#000000", "#ffffff", "#0e1a42"]
+    "colors": ["#0e1a42","#000000", "#ffffff"]
   },
   {
     "id":3,
@@ -49,7 +49,7 @@
     "imagen": "img/imgWebp/productos.webp/bermuda1.webp",
     "detalles": [],
     "categoria": "shorts",
-    "precio": "$800mxn",
+    "precio": "$900mxn",
     "descripcion": "Bermuda de mezclilla baggy, corte de pierna ancha con altura a media pantorrilla, bolsas traseras, cremallera en el frente y botón.",
     "padding": "center",
     "tallas": ["Female","Male"],
@@ -65,7 +65,7 @@
         {"src": "img/imgWebp/productos.webp/bermuda2.4.webp", "padding": "none", "color":"#ff0000"}
     ],
     "categoria": "shorts",
-    "precio": "$800mxn",
+    "precio": "$850mxn",
     "descripcion": "Bermuda baggy de tela de mezclilla en color blanco, color del estampado elegible, corte de pierna ancha con altura por debajo de la rodilla, bolsas traseras, cremallera en el frente y botón.",
     "padding": "center",
     "tallas": ["Female","Male"],
@@ -82,7 +82,7 @@
         {"src": "img/imgWebp/productos.webp/bolsa1.4.webp", "padding": "center", "color":"#0d1e76"}
     ],
     "categoria": "accesorios",
-    "precio": "$500mxn",
+    "precio": "$550mxn",
     "descripcion": "Bolsa de tiras estilo dramático, tejida a mano con tela de algodón, detalles metálicos en la asa botón de imán. Ancho:13cm, largo:26, asa:50cm.",
     "padding": "center",
     "colors": ["#000000", "#a50000","#ab0077","#0d1e76"]
@@ -92,13 +92,15 @@
     "nombre": "Bolsa RedLock",
     "imagen": "img/imgWebp/productos.webp/bolsa2.webp",
     "detalles": [
-      {"src": "img/imgWebp/productos.webp/bolsa2.1.webp", "padding": "left"}
+      {"src": "img/imgWebp/productos.webp/bolsa2.1.webp", "padding": "left"},
+      {"src": "img/imgWebp/productos.webp/bolsa2.2.webp", "padding": "center","color":"#000000"},
+      {"src": "img/imgWebp/productos.webp/bolsa2.3.webp", "padding": "center","color":"#0d1e76"}
     ],
     "categoria": "accesorios",
-    "precio": "$500mxn",
+    "precio": "$550mxn",
     "descripcion": "Bolsa tejida a mano con tela de algodón, cadena y aros metálicos en la asa, seguros de difernetes tamaños en ambas caras de la bolsa y botón de imán. Ancho:13cm, largo:26, asa:45cm.",
     "padding": "center",
-    "colors": ["#000000", "#a50000","#ab0077","#0d1e76"]
+    "colors": ["#a50000","#000000","#0d1e76"]
   },
   {
     "id": 8,
@@ -131,7 +133,7 @@
     "imagen": "img/imgWebp/productos.webp/gorro1.webp",
     "detalles": [],
     "categoria": "accesorios",
-    "precio": "$350mxn",
+    "precio": "$400mxn",
     "descripcion": "Gorro pescador de tela mezclilla con bordes desilachados",
     "padding": "center",
     "tallas": ["S","M","L"],
@@ -139,19 +141,19 @@
   },
   {
     "id": 11,
-    "nombre": "Camiseta Tatrre Roja",
+    "nombre": "Camisa Tatrre",
     "imagen": "img/imgWebp/productos.webp/camisatiras3.webp",
     "detalles": [
-      {"src": "img/imgWebp/productos.webp/camisatiras1.webp", "padding": "center"},
-      {"src": "img/imgWebp/productos.webp/camisatiras2.webp", "padding": "center"},
+      {"src": "img/imgWebp/productos.webp/camisatiras1.webp", "padding": "center","color":"#ffffff"},
+      {"src": "img/imgWebp/productos.webp/camisatiras2.webp", "padding": "center","color":"#000000"},
       {"src": "img/imgWebp/productos.webp/camisatiras1.1.webp", "padding": "none"}
     ],
     "categoria": "camisetas",
-    "precio": "$750mxn",
+    "precio": "$800mxn",
     "descripcion": "Camisa plizada oversize con mecanismo de tiras ajustables, que te permitiran modificar la forma y caida de la prenda, botones en la parte frontal y en puños. Medidas a elegir son masculinas",
     "padding": "center",
     "tallas": ["S","M","L","XL","XXL"],
-    "colors": ["#000000", "#ffffff","#ca0900" ]
+    "colors": ["#ca0900","#ffffff","#000000"]
   },
   {
     "id": 12,
@@ -167,25 +169,26 @@
   },
   {
     "id": 13,
-    "nombre": "Top Conjunto Grado 45",
+    "nombre": "Top Grado 45",
     "imagen": "img/imgWebp/productos.webp/top2.webp",
-    "detalles": [{"src": "img/imgWebp/productos.webp/top2.1.webp", "padding": "none"}],
+    "detalles": [{"src": "img/imgWebp/productos.webp/top2.1.webp", "padding": "right"},
+                {"src": "img/imgWebp/productos.webp/top2.2.webp", "padding": "center","color":"#000000"}],
     "categoria": "tops",
-    "precio": "$600mxn",
-    "descripcion": "Top de mezclilla en caida digonal con hombro descubierto, manga con botón en puño. La medidas de eleccion son femeninas",
+    "precio": "$7500mxn",
+    "descripcion": "Top del conjuto Grado 45, tela de mezclilla, pieza en caida digonal con hombro descubierto, manga con botón en puño. La medidas de eleccion son femeninas",
     "padding": "center",
     "tallas": ["XS","S","M","L","XL"],
-    "colors": ["#000000", "#173e83","#5492ff" ]
+    "colors": ["#173e83","#000000"]
   },
   {
     "id": 14,
-    "nombre": "Bermuda Conjunto Tartán 68",
+    "nombre": "Bermuda Tartán 68",
     "imagen": "img/imgWebp/productos.webp/bermuda3.webp",
     "detalles": [{"src": "img/imgWebp/productos.webp/bermuda3.1.webp", "padding": "none"},
                 {"src": "img/imgWebp/productos.webp/bermuda3.2.webp", "padding": "none"}],
     "categoria": "shorts",
     "precio": "$650mxn",
-    "descripcion": "Conjunto bermuda baggy de tela a cuadros, corte de pierba ancha, altura a media pantorrilla, bolsillos laterales y traseros .",
+    "descripcion": "Bermuda del conjunto Tartá 68, estilo baggy de tela a cuadros, corte de pierba ancha, altura a media pantorrilla, bolsillos laterales y traseros .",
     "padding": "center",
     "tallas": ["Female","Male"],
     "colors": ["#8c631a", "#b60202","#00318d" ]
@@ -194,21 +197,22 @@
     "id": 15,
     "nombre": "Bolsa 2D",
     "imagen": "img/imgWebp/productos.webp/bolsa3.webp",
-    "detalles": [{"src": "img/imgWebp/productos.webp/bolsa3.1.webp", "padding": "none"}],
+    "detalles": [{"src": "img/imgWebp/productos.webp/bolsa3.1.webp", "padding": "none"},
+                {"src": "img/imgWebp/productos.webp/bolsa3.2.webp", "padding": "center","color":"#000000"}],
     "categoria": "accesorios",
-    "precio": "$300mxn",
+    "precio": "$450mxn",
     "descripcion": "Bolsa de mezclilla plana con boton de iman. Altura:38cm, base:28cm ",
     "padding": "center",
-    "colors": ["#000000", "#173e83","#5492ff" ]
+    "colors": ["#173e83","#000000"]
   },
   {
     "id": 16,
-    "nombre": "Pantalón Conjunto Grado 45",
+    "nombre": "Pantalón Grado 45",
     "imagen": "img/imgWebp/productos.webp/pantalon3.webp",
     "detalles": [{"src": "img/imgWebp/productos.webp/pantalon3.1.webp", "padding": "none"},
                 {"src": "img/imgWebp/productos.webp/pantalon3.2.webp", "padding": "none"}],
     "categoria": "pantalones",
-    "precio": "$800mxn",
+    "precio": "$900mxn",
     "descripcion": "Pantalón del congunto Grado 45, tela de mezclilla con leyenda en el bajo con el nombre de la marca, bolsas cuadradas traseras y delanteras, cremallera y botón al frente.",
     "padding": "center",
     "tallas": ["Female","Male"],
@@ -216,12 +220,13 @@
   },
   {
     "id": 17,
-    "nombre": "Top Conjunto Tartán 68",
+    "nombre": "Top Tartán 68",
     "imagen": "img/imgWebp/productos.webp/top3.webp",
-    "detalles": [],
+    "detalles": [{"src": "img/imgWebp/productos.webp/top3.1.webp", "padding": "none"},
+                  {"src": "img/imgWebp/productos.webp/top3.2.webp", "padding": "none"}],
     "categoria": "tops",
     "precio": "$500mxn",
-    "descripcion": "Top conjunto Tartán 68, tiras agustables en cuello y cintura, espalda descubierta y capucha.",
+    "descripcion": "Top del conjunto Tartán 68, tiras agustables en cuello y cintura, espalda descubierta y capucha.",
     "padding": "center",
     "tallas": ["XS","S", "M", "L","XL"],
     "colors": ["#8c631a", "#b60202","#00318d" ]
@@ -232,7 +237,7 @@
     "imagen": "img/imgWebp/productos.webp/short1.webp",
     "detalles": [{"src": "img/imgWebp/productos.webp/short1.1.webp", "padding": "none"}],
     "categoria": "shorts",
-    "precio": "$900mxn",
+    "precio": "$950mxn",
     "descripcion": "Short confeccionado en mezclilla con un acabado deconstruido, técnica patch-work con detalles en redesilachados. Bolsillos laterales y traseros.",
     "padding": "center",
     "tallas": ["Female","Male"],
@@ -268,7 +273,7 @@
     "imagen": "img/imgWebp/productos.webp/chamarra1.webp",
     "detalles": [{"src": "img/imgWebp/productos.webp/chamarra1.1.webp", "padding": "left"}],
     "categoria": "chamarras",
-    "precio": "$800mxn",
+    "precio": "$900mxn",
     "descripcion": "Chamarra conjunto Vector 90, corte boxy. Pieza unica en talla L.",
     "padding": "center",
     "tallas": ["L"],
@@ -276,7 +281,7 @@
   },
   {
     "id": 22,
-    "nombre": "Bermuda conjunto Vector 90",
+    "nombre": "Bermuda Vector 90",
     "imagen": "img/imgWebp/productos.webp/bermuda4.webp",
     "detalles": [{"src": "img/imgWebp/productos.webp/bermuda4.1.webp", "padding": "none"},
                 {"src": "img/imgWebp/productos.webp/bermuda4.2.webp", "padding": "left"}],
