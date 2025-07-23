@@ -247,13 +247,13 @@
     "id": 19,
     "nombre": "Pantalón Tatrre Mujer",
     "imagen": "img/imgWebp/productos.webp/pantalon1.webp",
-    "detalles": [],
+    "detalles": [{"src": "img/imgWebp/productos.webp/pantalon1.1.webp", "padding": "none"}],
     "categoria": "pantalones",
     "precio": "$1400mxn",
     "descripcion": "Pantalón confeccionado en mezclilla con un acabado deconstruido, técnica patch-work con detalles en redesilachados. Bolsillos laterales y traseros.",
     "padding": "center",
     "tallas": ["Female"],
-    "colors": ["#000000", "#173e83"]
+    "colors": ["#173e83","#000000"]
   },
   {
     "id": 20,
@@ -292,7 +292,30 @@
     "descripcion": "Pantalón confeccionado en mezclilla con un acabado deconstruido, técnica patch-work con detalles en redesilachados. Bolsillos laterales y traseros.",
     "padding": "center",
     "tallas": ["Male"],
-    "colors": ["#000000", "#173e83"]
+    "colors": ["#173e83","#000000"]
+  },
+  {
+    "id": 23,
+    "nombre": "Chaleco Tatrre 2.0",
+    "imagen": "img/imgWebp/productos.webp/chaleco2.webp",
+    "detalles": [{"src": "img/imgWebp/productos.webp/caleco2.1.webp", "padding": "none"}],
+    "categoria": "chamarras",
+    "precio": "$600mxn",
+    "descripcion": "Chaleco corte cuadrado con bolsillos delanteros.",
+    "padding": "center",
+    "tallas": ["S", "M", "L","XL","XXL"],
+    "colors": ["#000000"]
+  },
+  {
+    "id": 24,
+    "nombre": "Corbata Tatrre Maxi",
+    "imagen": "img/imgWebp/productos.webp/corbata3.webp",
+    "detalles": [{"src": "img/imgWebp/productos.webp/corbata3.1.webp", "padding": "none"}],
+    "categoria": "accesorios",
+    "precio": "$350mxn",
+    "descripcion": "Corbata Maxi, 195cm de largo, punta, 12cm de ancho en la cara frontal.",
+    "padding": "center",
+    "colors": ["#000000", "#ff0000","#703f00"]
   }
 
 ]
