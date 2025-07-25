@@ -277,9 +277,9 @@
                 {"src": "img/imgWebp/productos.webp/bermuda4.2.webp", "padding": "left"}],
     "categoria": "chamarras",
     "precio": "$1800mxn",
-    "descripcion": "Conjunto Vector 90, corte boxy, pierna ancha. Pieza unica en talla L.",
+    "descripcion": "Conjunto Vector 90, corte boxy, pierna ancha. Pieza unica en talla M.",
     "padding": "center",
-    "tallas": ["L"],
+    "tallas": ["M"],
     "colors": ["#ef6804"]
   },
   {
