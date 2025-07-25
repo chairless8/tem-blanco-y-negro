@@ -51,7 +51,10 @@ class ShoppingCart {
                             <h3>Resumen de tu orden:</h3>
                             <div id="orderSummaryContent"></div>
                             <div class="order-total-section">
-                                <strong>Total: <span id="orderModalTotal">$0</span></strong>
+                                <strong>Total: <span id="orderModalTotal">$0</span> + Envio</strong>
+                            </div>
+                            <div class="small-text">
+                                <span><strong>Nota:</strong> El envio promedio tiene un costo de $250mxn, pero puede variar dependiendo de la ubicación.</span>
                             </div>
                         </div>
 
@@ -406,7 +409,7 @@ class ShoppingCart {
         cartFooter.innerHTML = `
             <div class="cart-total">
                 <span>Total:</span>
-                <span>$${total}mxn</span>
+                <span>$${total}mxn + Envio</span>
             </div>
             <button class="confirm-order-btn" onclick="cart.confirmOrder()">Confirmar Orden</button>
         `;
