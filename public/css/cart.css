@@ -417,6 +417,7 @@
     font-size: 14px;
     transition: border-color 0.2s;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
 .order-form input:focus,
@@ -472,6 +473,9 @@
     display: none;
 }
 
+.text-end{
+    text-align: end;
+}
 /* Responsive */
 @media (max-width: 768px) {
     #detalle-producto h3 {
@@ -482,6 +486,10 @@
     .cart-sidebar {
         width: 100%;
         right: -100%;
+    }
+
+    .titule-modal{
+    line-height: 2rem;
     }
 
     .cart-close {
@@ -531,4 +539,89 @@
     color: #666;
     margin-top: 10px;
     font-family: 'Montserrat', sans-serif;
+}
+.order-form textarea{
+        font-size: 15px;
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+    #detalle-producto h3{
+        font-size: 12px;
+        padding: 15px 0 8px 0;
+    }
+    .order-modal-header h2 {
+    margin: 0;
+    color: #000000;
+    font-size: 20px;
+    }
+    .order-item-name {
+    font-weight: 500;
+    color: #333;
+    font-size: 12px;
+    }
+    .titule-modal{
+    line-height: 1rem;
+    }
+    .order-item-details {
+    font-size: 12px;
+    color: #666;
+    margin-top: 2px;
+    }
+    .order-item-price {
+    font-weight: 500;
+    color: #333;
+    font-size: 15px;
+    }
+    .order-total-section{
+        font-size: 15px;
+    }
+
+    .cart-close {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .cart-icon {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px;
+    }
+
+    .cart-icon i {
+        font-size: 18px;
+    }
+
+    .cart-count {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+
+    .order-modal-header,
+    .order-modal-body {
+        padding: 12px;
+    }
+
+    .order-modal-content {
+        margin: 5px;
+        max-height: 90vh;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .small-text {
+        font-size: 11px;
+        text-align: center;
+    }
+    .order-form label {
+    font-size: 13px;
+    }
+    .order-form textarea{
+        font-size: 12px;
+    }
 }

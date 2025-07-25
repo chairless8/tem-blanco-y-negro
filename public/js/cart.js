@@ -43,7 +43,7 @@ class ShoppingCart {
             <div id="orderModal" class="order-modal" style="display: none;">
                 <div class="order-modal-content">
                     <div class="order-modal-header">
-                        <h2>Confirmar Orden</h2>
+                        <h2 class= "titule-modal">Confirmar Orden</h2>
                         <span class="order-modal-close">&times;</span>
                     </div>
                     <div class="order-modal-body">
@@ -409,7 +409,7 @@ class ShoppingCart {
         cartFooter.innerHTML = `
             <div class="cart-total">
                 <span>Total:</span>
-                <span>$${total}mxn + Envio</span>
+                <span class="text-end">$${total}mxn + Envio</span>
             </div>
             <button class="confirm-order-btn" onclick="cart.confirmOrder()">Confirmar Orden</button>
         `;
@@ -456,15 +456,18 @@ class ShoppingCart {
         this.cart.forEach(item => {
             let itemDetails = '';
             if (item.tallaSeleccionada || item.colorSeleccionado) {
-                let details = [];
+                    let details = '';
                 if (item.tallaSeleccionada) {
-                    details.push(`Talla: ${item.tallaSeleccionada}`);
+                    details += `<div class="order-item-detail">Talla: ${item.tallaSeleccionada}</div>`;
                 }
                 if (item.colorSeleccionado) {
-                    details.push(`Color: <span style="display: inline-block; width: 12px; height: 12px; background-color: ${item.colorSeleccionado}; border-radius: 50%; margin-left: 4px; border: 1px solid #ddd;"></span>`);
+                    details += `<div class="order-item-detail">Color: 
+                        <span style="display: inline-block; width: 12px; height: 12px; background-color: ${item.colorSeleccionado}; border-radius: 50%; margin-left: 4px; border: 1px solid #ddd;"></span>
+                    </div>`;
                 }
-                itemDetails = `<div class="order-item-details">${details.join(' | ')}</div>`;
+                itemDetails = `<div class="order-item-details">${details}</div>`;
             }
+
 
             const itemPrice = parseInt(item.precio.replace(/[^0-9]/g, ''));
             summaryHtml += `
@@ -473,7 +476,7 @@ class ShoppingCart {
                         <div class="order-item-name">${item.nombre} x${item.quantity}</div>
                         ${itemDetails}
                     </div>
-                    <div class="order-item-price">$${(itemPrice * item.quantity).toLocaleString()}mxn</div>
+                    <div class="order-item-price">$${(itemPrice * item.quantity).toLocaleString()}</div>
                 </div>
             `;
         });
