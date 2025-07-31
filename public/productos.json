@@ -161,7 +161,7 @@
     "imagen": "img/imgWebp/productos.webp/chaleco1.webp",
     "detalles": [],
     "categoria": "chamarras",
-    "precio": "$800mxn",
+    "precio": "$850mxn",
     "descripcion": "Chaleco oversize confeccionado en mezclilla con un acabado deconstruido, técnica patch-work: paneles cuadrados de mezclilla detalles en redesilachados. Las medidas a elegir son masculinas",
     "padding": "center",
     "tallas": ["S","M","L","XL","XXL"],
@@ -207,16 +207,18 @@
   },
   {
     "id": 16,
-    "nombre": "Pantalón Grado 45",
-    "imagen": "img/imgWebp/productos.webp/pantalon3.webp",
-    "detalles": [{"src": "img/imgWebp/productos.webp/pantalon3.1.webp", "padding": "none"},
-                {"src": "img/imgWebp/productos.webp/pantalon3.2.webp", "padding": "none"}],
-    "categoria": "pantalones",
-    "precio": "$900mxn",
-    "descripcion": "Pantalón del congunto Grado 45, tela de mezclilla con leyenda en el bajo con el nombre de la marca, bolsas cuadradas traseras y delanteras, cremallera y botón al frente.",
+    "nombre": "Conjunto Vector 90",
+    "imagen": "img/imgWebp/productos.webp/chamarra1.webp",
+    "detalles": [{"src": "img/imgWebp/productos.webp/chamarra1.1.webp", "padding": "center"},
+                {"src": "img/imgWebp/productos.webp/bermuda4.webp", "padding": "center"},
+                {"src": "img/imgWebp/productos.webp/bermuda4.1.webp", "padding": "none"},
+                {"src": "img/imgWebp/productos.webp/bermuda4.2.webp", "padding": "left"}],
+    "categoria": "chamarras",
+    "precio": "$1800mxn",
+    "descripcion": "Conjunto Vector 90, corte boxy, pierna ancha. pieza única talla M, bermuda talla 34.",
     "padding": "center",
-    "tallas": ["Female","Male"],
-    "colors": ["#000000", "#173e83"]
+    "tallas": ["M"],
+    "colors": ["#ef6804"]
   },
   {
     "id": 17,
@@ -269,18 +271,16 @@
   },
   {
     "id": 21,
-    "nombre": "Conjunto Vector 90",
-    "imagen": "img/imgWebp/productos.webp/chamarra1.webp",
-    "detalles": [{"src": "img/imgWebp/productos.webp/chamarra1.1.webp", "padding": "none"},
-                {"src": "img/imgWebp/productos.webp/bermuda4.webp", "padding": "none"},
-                {"src": "img/imgWebp/productos.webp/bermuda4.1.webp", "padding": "none"},
-                {"src": "img/imgWebp/productos.webp/bermuda4.2.webp", "padding": "left"}],
-    "categoria": "chamarras",
-    "precio": "$1800mxn",
-    "descripcion": "Conjunto Vector 90, corte boxy, pierna ancha. pieza única talla M, bermuda talla 34.",
+    "nombre": "Pantalón Grado 45",
+    "imagen": "img/imgWebp/productos.webp/pantalon3.webp",
+    "detalles": [{"src": "img/imgWebp/productos.webp/pantalon3.1.webp", "padding": "none"},
+                {"src": "img/imgWebp/productos.webp/pantalon3.2.webp", "padding": "none"}],
+    "categoria": "pantalones",
+    "precio": "$900mxn",
+    "descripcion": "Pantalón del congunto Grado 45, tela de mezclilla con leyenda en el bajo con el nombre de la marca, bolsas cuadradas traseras y delanteras, cremallera y botón al frente.",
     "padding": "center",
-    "tallas": ["M"],
-    "colors": ["#ef6804"]
+    "tallas": ["Female","Male"],
+    "colors": ["#000000", "#173e83"]
   },
   {
     "id": 22,
@@ -316,6 +316,29 @@
     "descripcion": "Corbata Maxi, 195cm de largo, punta, 12cm de ancho en la cara frontal.",
     "padding": "center",
     "colors": ["#000000", "#ff0000","#703f00"]
+  },
+   {
+    "id": 25,
+    "nombre": "Corbata Tartán 68",
+    "imagen": "img/imgWebp/productos.webp/corbata4.webp",
+    "detalles": [],
+    "categoria": "accesorios",
+    "precio": "$350mxn",
+    "descripcion": "Corbata a cuadros, 150cm de largo.",
+    "padding": "center",
+    "colors": ["#8c631a"]
+  },
+  {
+    "id": 26,
+    "nombre": "Chaqueta 97",
+    "imagen": "img/imgWebp/productos.webp/chamarra2.webp",
+    "detalles": [{"src": "img/imgWebp/productos.webp/chamarra2.1.webp", "padding": "right"}],
+    "categoria": "chamarras",
+    "precio": "$950mxn",
+    "descripcion": "Chaqueta corte cuadrado de denim con ziper, manga ancha y bolsas frontales. Las tallas a elegir son masculinas.",
+    "padding": "center",
+     "tallas": ["S", "M", "L","XL","XXL"],
+    "colors": ["#5494ff"]
   }
 
 ]
