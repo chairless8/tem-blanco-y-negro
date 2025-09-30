@@ -339,7 +339,7 @@
     "descripcion": "Chaqueta corte cuadrado de denim con ziper, manga ancha y bolsas frontales. Las tallas a elegir son masculinas. Imagen muetra (color no existente). Cada pieza de IceGreen es hecha a mano.",
     "padding": "center",
      "tallas": ["S", "M", "L","XL","XXL"],
-    "colors": ["#0e1a42"]
+    "colors": ["#000000","#0e1a42"]
   },
   {
     "id": 27,
