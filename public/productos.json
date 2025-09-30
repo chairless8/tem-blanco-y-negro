@@ -332,11 +332,11 @@
   {
     "id": 26,
     "nombre": "Chaqueta 97",
-    "imagen": "img/imgWebp/productos.webp/chamarra2.webp",
-    "detalles": [{"src": "img/imgWebp/productos.webp/chamarra2.1.webp", "padding": "right"}],
+    "imagen": "img/imgWebp/productos.webp/chamarra3.webp",
+    "detalles": [],
     "categoria": "chamarras",
     "precio": "$1000mxn",
-    "descripcion": "Chaqueta corte cuadrado de denim con ziper, manga ancha y bolsas frontales. Las tallas a elegir son masculinas. Imagen muetra (color no existente). Cada pieza de IceGreen es hecha a mano.",
+    "descripcion": "Chaqueta corte cuadrado de denim con ziper, manga ancha y bolsas frontales. Las tallas a elegir son masculinas. Cada pieza de IceGreen es hecha a mano.",
     "padding": "center",
      "tallas": ["S", "M", "L","XL","XXL"],
     "colors": ["#000000","#0e1a42"]
