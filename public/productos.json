@@ -331,7 +331,7 @@
   },
   {
     "id": 26,
-    "nombre": "Chaqueta 97",
+    "nombre": "Chaqueta Ice97",
     "imagen": "img/imgWebp/productos.webp/chamarra3.webp",
     "detalles": [],
     "categoria": "chamarras",
@@ -390,5 +390,31 @@
     "descripcion": "Corbata Maxi, 195cm de largo, punta, 12cm de ancho en la cara frontal. Cada pieza de IceGreen es hecha a mano.",
     "padding": "center",
     "colors": ["#000000", "#ff0000","#703f00"]
+  },
+  {
+    "id": 31,
+    "nombre": "Chaqueta Ice96",
+    "imagen": "img/imgWebp/productos.webp/chamarra4.webp",
+    "detalles": [{"src": "img/imgWebp/productos.webp/chamarra4.1.webp", "padding": "none"},
+                {"src": "img/imgWebp/productos.webp/chamarra4.2.webp", "padding": "none"},
+                {"src": "img/imgWebp/productos.webp/chamarra4.3.webp", "padding": "center","color":"#000000"}],
+    "categoria": "chamarras",
+    "precio": "$750mxn",
+    "descripcion": "Chaqueta manga corta corte box, cuello circular, cierre y bolsillos delanteros. Las talla a elegir son masculinas. Cada pieza de IceGreen es hecha a mano.",
+    "padding": "center",
+    "tallas": ["S", "M", "L","XL","XXL"],
+    "colors": ["#0e1a42","#000000"]
+  },
+  {
+    "id": 32,
+    "nombre": "Camisa Jap",
+    "imagen": "img/imgWebp/productos.webp/camisa4.webp",
+    "detalles": [{"src": "img/imgWebp/productos.webp/camisa4.1.webp", "padding": "none"},
+                {"src": "img/imgWebp/productos.webp/camisa4.2.webp", "padding": "none"}],
+    "categoria": "camisetas",
+    "precio": "$700mxn",
+    "descripcion": "Camisa de estilo japonés, corte box, botones de nudo y bolsillos delanteros. Cada pieza de IceGreen es hecha a mano.",
+    "padding": "center",
+    "colors": ["#b60202","#703f00"]
   }
 ]
